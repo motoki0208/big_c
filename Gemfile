@@ -10,23 +10,24 @@ gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
-gem "pry-rails"
 gem "jquery-rails"
 gem "haml-rails"
 gem "erb2haml"
 gem 'bootstrap', '~> 4.1.1'
-
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  # gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "pry-rails"
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do

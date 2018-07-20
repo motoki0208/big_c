@@ -1,0 +1,19 @@
+%h1 Listing stars
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @stars.each do |star|
+      %tr
+        %td= link_to 'Show', star
+        %td= link_to 'Edit', edit_star_path(star)
+        %td= link_to 'Destroy', star, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Star', new_star_path
