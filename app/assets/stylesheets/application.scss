@@ -3,6 +3,7 @@
 @import './header';
 @import "bootstrap";
 @import "font-awesome";
+@import './star_index';
 /*-- Settings ---------------------------------- */
 
 .clearfix:after {
@@ -15,7 +16,9 @@
 
 button .btn{
   cursor: pointer;
-  &:focus{
+  border: none;
+  background-color: transparent;
+  &:focus,&:hover{
     outline: 0;
     opacity: 0.5;
   }

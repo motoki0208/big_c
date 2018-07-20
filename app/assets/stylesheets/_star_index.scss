@@ -1,0 +1,12 @@
+.contents{
+  // margin-top: 80px;
+  .jumbotron{
+  background-image: image-url("jumbotron.jpg");
+  background-size: cover;
+  color: $white;
+  margin-bottom: -32px;
+  h1{
+    color: $white;
+    }
+  }
+}
