@@ -1,12 +1,10 @@
-/*
- *= require font-awesome
-*/
+
 @import './reset';
 @import './variable';
-@import './header';
-@import './footer';
+
+
 @import "bootstrap";
-@import "font-awesome";
+
 /*-- Settings ---------------------------------- */
 
 .clearfix:after {
@@ -96,3 +94,9 @@ p {
 .removed{
   display: none;
 }
+
+
+// 試しに文字の色変えれるかとかを試しました
+// .grid-6{
+//   color: yellow;
+// }
