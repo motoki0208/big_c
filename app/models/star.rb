@@ -1,25 +1,27 @@
 class Star < ApplicationRecord
   enum gender: { male: true, female: false }
 
-  belongs_to :occupation, optional: true
-  has_many :star_events
-  has_many :events, through: :star_events
-  has_many :star_games
-  has_many :games, through: :star_games
-  has_many :star_lessons
-  has_many :lessons, through: :star_lessons
-  belongs_to :hometown, class_name: "Location", foreign_key: "hometown_id", dependent: :destroy
-  belongs_to :address, class_name: "Location", foreign_key: "address_id", dependent: :destroy
-  has_many :star_like_places
-  has_many :like_places, class_name: "Place", through: :star_like_places
-  has_many :star_dislike_places
-  has_many :dislike_places, class_name: "Place", through: :star_dislike_places
-  has_many :star_programs
-  has_many :programs, through: :star_programs
-  has_many :star_subjects
-  has_many :subjects, through: :star_subjects
-  has_many :star_weaknesses
-  has_many :weaknesses, through: :star_weaknesses
-  has_many :star_strengths
-  has_many :strengths, through: :star_strengths
+  belongs_to              :occupation, optional: true
+  belongs_to              :hometown, optional: true
+  has_and_belongs_to_many :games
+  has_and_belongs_to_many :lessons
+  has_and_belongs_to_many :contents_genres
+  has_and_belongs_to_many :school_charges
+  has_and_belongs_to_many :weakness_tags
+  has_and_belongs_to_many :strength_tags
+
+  has_many :like_places, through: :star_like_places, source: :school_places
+  has_many :star_like_places, dependent: :destroy
+  has_many :dislike_places, through: :star_dislike_places, source: :school_places
+  has_many :star_dislike_places, dependent: :destroy
+
+  has_many :like_events, through: :star_like_events, source: :school_events
+  has_many :star_like_events, dependent: :destroy
+  has_many :dislike_events, through: :star_dislike_events, source: :school_events
+  has_many :star_dislike_events, dependent: :destroy
+
+  has_many :like_subjects, through: :star_like_subjects, source: :school_subjects
+  has_many :star_like_subjects, dependent: :destroy
+  has_many :dislike_subjects, through: :star_dislike_subjects,source: :school_subjects
+  has_many :star_dislike_subjects, dependent: :destroy
 end
