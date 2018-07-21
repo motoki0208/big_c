@@ -1,0 +1,28 @@
+/ モーダルウィンドウを呼び出すボタン
+- if user_signed_in?
+  %button.btn.btn-primary{:type => "button"}
+    .user_nav.grid-6
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+- else
+  %button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+    .grid-6
+      ログイン
+/ モーダルウィンドウの中身
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .p-3
+          %ul.nav.nav-tabs
+            %li.nav-item
+              %a.nav-link{"data-toggle" => "tab", :href => "#tab1"} 会員登録
+            %li.nav-item
+              %a.nav-link{"data-toggle" => "tab", :href => "#tab2"} ログイン
+          .tab-content
+            #tab1.tab-pane.active
+              = link_to "会員登録はこちらをクリック", new_user_registration_path, class: 'registration__button'
+            #tab2.tab-pane
+              = link_to "ログインはこちらをクリック", new_user_session_path, class: 'login__button'
+      .modal-footer
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"} 閉じる
+

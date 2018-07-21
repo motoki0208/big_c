@@ -95,8 +95,10 @@ p {
   display: none;
 }
 
+.registration__button{
+  color: $redOrange;
+}
 
-// 試しに文字の色変えれるかとかを試しました
-// .grid-6{
-//   color: yellow;
-// }
+.login__button{
+  color: $redOrange;
+}
