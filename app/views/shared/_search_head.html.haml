@@ -1,17 +1,30 @@
-.category-barnav.clearfix
-  %ul.nav-pills.nav-justified
-    %li.category-bar_nav__item.col-xs-2
-      %button.disable_btn 何から探す？
-    %li.category-bar_nav__item.col-xs-2
-      %button{href: "#"}
-        得意なこと
-    %li.category-bar_nav__item.col-xs-2
-      %button{href: "#"}
-        苦手なこと
-    %li.category-bar_nav__item.col-xs-2
-      %button{href: "#"}
-        悩んでいること 
-    %li.category-bar_nav__item.col-xs-2
-      %button{href: "#"}
-        いろいろ
-        
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .navibar__search
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+      / %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+  %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNavDropdown.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item.active.pl-xs-3.pl-lg-3
+        %a.nav-link.disabled 何から探す？
+      %li.nav-item
+        %a.nav-link{:href => "#得意"} 得意なこと
+      %li.nav-item
+        %a.nav-link{:href => "#苦手"} 苦手なこと
+      %li.nav-item
+        %a.nav-link{:href => "#悩み"} 悩んでいること
+      %li.nav-item
+        %a.nav-link{:href => "#いろいろ"} いろいろ
+      %li.nav-item.dropdown
+        %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+          menu
+        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+          %a.dropdown-item{:href => "#"} お気に入り
+          %a.dropdown-item{:href => "#"} 設定
+          %a.dropdown-item{:href => "#"} ログアウト
+.jumbotron.jumbotron-fluid
+  .container.pt-xs-3.pt-lg-3
+    %h1.display-4 bigc
+    %p.lead 未来の自分を探そう！

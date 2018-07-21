@@ -1,7 +1,10 @@
-.header.clearfix
-  .navibar
-    .navibar__search
-      = form_tag("#", method: :get, autocomplete: 'off') do
-        %input.search__query#search-field{name: "keyword", placeholder: "検索ワードを入力", type: "text", value: ""}
-      = button_to "検索", "#", class: "search_submit btn"
-    = link_to 'ログイン', '#',class: "login_button"
+/ .header.clearfix
+/   .navibar
+/     .navibar__search
+/       = form_tag("#", method: :get, autocomplete: 'off') do
+/         %input.search__query#search-field{name: "keyword", placeholder: "検索ワードを入力", type: "text", value: ""}
+/       = button_to "検索", "#", class: "search_submit btn"
+/     = link_to 'ログイン', '#',class: "login_button"
+/ / %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+/ /   %input.form-control.mr-sm-1{"aria-label" => "Search", placeholder: "フリーワード検索", type: "search"}/
+/ /   = button_to "検索", "#", class: "search_submit btn"
