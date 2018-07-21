@@ -1,0 +1,15 @@
+.container__wrapper
+  .container
+    .login-container
+      #output
+      .avatar
+      .form-box
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = devise_error_messages!
+          .field
+            = f.label :emailアドレス
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .actions
+            %button.btn.btn-info.btn-block.login{:type => "submit"} パスワードのリセット
+        = render "devise/shared/links"
