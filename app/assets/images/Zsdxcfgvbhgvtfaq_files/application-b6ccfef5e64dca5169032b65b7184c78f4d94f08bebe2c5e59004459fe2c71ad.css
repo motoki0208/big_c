@@ -1,0 +1,313 @@
+/* line 14, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.font-1, .font-1 a {
+  font-family: 'Inconsolata', sans-serif;
+}
+
+/* line 19, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+html, body {
+  height: 100%;
+  background: url(/assets/tiny_grid.png) !important;
+  font-family: Helvetica, Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px !important;
+}
+
+/* line 27, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+html {
+  margin: 0px !important;
+}
+
+/* line 31, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* line 35, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.flash {
+  font-size: 20px;
+}
+
+/* line 39, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#main_container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative !important;
+  margin: 0 auto -40px auto;
+}
+
+/* line 50, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#donate {
+  position: absolute;
+  bottom: 0px;
+  right: 141px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  color: gray;
+}
+/* line 58, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#donate a {
+  color: gray;
+  text-decoration: none;
+}
+
+/* line 64, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#copyright {
+  position: absolute;
+  bottom: 0px;
+  right: 41px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  color: gray;
+}
+/* line 72, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#copyright a {
+  color: gray;
+  text-decoration: none;
+}
+
+/* line 79, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#main_container > .container {
+  padding-top: 60px;
+}
+
+/* line 83, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.push_footer {
+  height: 100px;
+  clear: both;
+}
+
+/* line 88, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.push {
+  height: 1em;
+  clear: both;
+}
+
+/* line 92, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.clear {
+  clear: both;
+  height: 0;
+}
+
+/* line 98, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.center {
+  text-align: center;
+}
+
+/* line 102, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.strong {
+  font-weight: bold;
+}
+
+/* line 106, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.btn-huge {
+  font-size: 20px;
+}
+
+/* line 108, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+textarea {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -khtml-border-radius: 4px;
+  /* for old Konqueror browsers */
+  font-size: 13px;
+  line-height: 1em;
+  font-family: 'Inconsolata', sans-serif;
+  border: 1px solid lightgray;
+  margin: 0;
+  /*	margin:20px 0 20px 0;*/
+  resize: none;
+}
+
+/* line 131, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#the_html_body {
+  margin-right: 40px;
+}
+
+/* line 143, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+::-webkit-input-placeholder {
+  text-align: center;
+  color: lightgray;
+  font-size: 88px;
+  line-height: 88px;
+}
+
+/* line 150, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+:-moz-placeholder {
+  text-align: center;
+  color: lightgray;
+  font-size: 88px;
+  line-height: 88px;
+}
+
+/* line 158, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+input[type="checkbox"] {
+  float: left;
+}
+
+/* line 162, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#form-container {
+  width: 100%;
+  height: 100% !important;
+  /*	border:1px solid gray;*/
+  margin: 0px auto !important;
+  display: inline-block;
+}
+
+/* line 170, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#hun {
+  /*	margin-top:40px;*/
+  width: 100%;
+  text-align: center;
+  height: 90% !important;
+}
+
+/* line 178, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#title {
+  background: black;
+  color: white;
+  font-size: 30px;
+  line-height: 40px;
+  height: 40px;
+  /*	border:1px red solid;*/
+}
+
+/* line 187, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#title-text {
+  float: left;
+  margin-left: 42px;
+}
+/* line 190, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#title-text a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 196, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#title-colors {
+  float: right;
+  /*	margin-right:40px;*/
+}
+
+/* line 206, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#notice-holder {
+  min-width: 1150px;
+}
+
+/* line 209, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#subtitle2, #ad2 {
+  font-size: 24px;
+  line-height: 60px;
+  height: 20px;
+  z-index: 43000;
+}
+
+/* line 216, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#subtitle2 {
+  color: gray;
+  float: left;
+  margin-left: 42px;
+}
+
+/* line 221, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#ad2 {
+  float: right;
+  margin-right: 42px;
+}
+
+/* line 233, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#sub-donate {
+  float: right;
+  margin-right: 42px;
+  font-size: 20px;
+  line-height: 60px;
+  height: 20px;
+}
+
+/* line 241, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.spacer {
+  height: 40px;
+}
+
+/* line 245, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.color {
+  height: 4px;
+  width: 20px;
+  border: 0px;
+}
+
+/* line 255, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.blue {
+  background-color: #0F64B0 !important;
+}
+
+/* line 256, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.red {
+  background-color: #CD1127;
+}
+
+/* line 257, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.black {
+  background-color: #121213;
+}
+
+/* line 258, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.yellow {
+  background-color: #FEEB0E;
+}
+
+/* line 259, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.green {
+  background-color: #309A31;
+}
+
+/* line 261, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#twitter {
+  position: absolute;
+  left: 41px;
+  bottom: 4px;
+}
+
+/* line 267, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#donatenow {
+  display: none;
+  margin-left: 42px;
+}
+
+/* line 272, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+.mr {
+  margin-right: 20px;
+}
+
+/* line 276, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+a {
+  text-decoration: none !important;
+}
+/* line 278, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+a:visited {
+  color: black;
+}
+
+/* line 283, /Users/bevan/apps/hamlhaml/app/assets/stylesheets/elements.css.scss */
+#bountify-logo {
+  vertical-align: middle;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
