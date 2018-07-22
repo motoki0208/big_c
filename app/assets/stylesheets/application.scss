@@ -1,8 +1,7 @@
-@import './reset';
-@import './variable';
-@import './header';
 @import "bootstrap";
 @import "font-awesome";
+@import './reset';
+@import './variable';
 @import './star_index';
 /*-- Settings ---------------------------------- */
 
@@ -17,7 +16,6 @@
 button .btn{
   cursor: pointer;
   border: none;
-  background-color: transparent;
   &:focus,&:hover{
     outline: 0;
     opacity: 0.5;
