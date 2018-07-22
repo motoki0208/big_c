@@ -5,3 +5,92 @@
 @import './config';
 @import './devise';
 @import './star_index';
+/*-- Settings ---------------------------------- */
+
+html, body {
+  height: 100%;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+button,.btn{
+  cursor: pointer;
+  border: none;
+  &:focus,&:hover{
+    outline: 0;
+    opacity: 0.5;
+}
+input[type="text"]:focus {
+  outline: 0;
+}
+a{
+  text-decoration: none;
+  color: $fontBlack;
+  &:focus{
+    text-decoration: none;
+    color: $fontBlack;
+    opacity: 0.5;
+  }
+  &:hover{
+    text-decoration: none;
+    color: $fontBlack;
+    opacity: 0.5;
+  }
+}
+}
+
+body{
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.p,
+{
+  color: $fontGray;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+}
+h1,
+.h1 {
+  font-size: 25px;
+}
+h2,
+.h2 {
+  font-size: 20px;
+}
+h3,
+.h3 {
+  font-size: 18px;
+}
+h4,
+.h4 {
+  font-size: 16px;
+}
+h5,
+.h5 {
+  font-size: 15px;
+}
+h6,
+.h6 {
+  font-size: 14px;
+}
+p {
+  font-size: 12px;
+}

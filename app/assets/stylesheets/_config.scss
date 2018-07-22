@@ -18,6 +18,7 @@ button,.btn{
   &:focus,&:hover{
     outline: 0;
     opacity: 0.5;
+  }
 }
 input[type="text"]:focus {
   outline: 0;
@@ -36,7 +37,7 @@ a{
     opacity: 0.5;
   }
 }
-}
+
 
 body{
 }
