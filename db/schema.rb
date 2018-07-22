@@ -10,93 +10,94 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180721071507) do
+ActiveRecord::Schema.define(version: 20180721036006) do
 
-  create_table "charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "content_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
   end
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "game_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
   end
 
-  create_table "games", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "hometowns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+    t.index ["name"], name: "index_hometowns_on_name"
   end
 
   create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_locations_on_name"
   end
 
   create_table "occupations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
-    t.text "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "url_13hw"
     t.index ["name"], name: "index_occupations_on_name"
   end
 
-  create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "school_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
   end
 
-  create_table "programs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "school_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
   end
 
-  create_table "star_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "school_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+  end
+
+  create_table "school_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+  end
+
+  create_table "school_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+  end
+
+  create_table "star_content_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "charge_id"
+    t.bigint "content_genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["charge_id"], name: "index_star_charges_on_charge_id"
-    t.index ["star_id"], name: "index_star_charges_on_star_id"
+    t.index ["content_genre_id"], name: "index_star_content_genres_on_content_genre_id"
+    t.index ["star_id"], name: "index_star_content_genres_on_star_id"
+  end
+
+  create_table "star_dislike_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "star_id"
+    t.bigint "school_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_event_id"], name: "index_star_dislike_events_on_school_event_id"
+    t.index ["star_id"], name: "index_star_dislike_events_on_star_id"
   end
 
   create_table "star_dislike_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "dislike_place_id"
+    t.bigint "school_place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dislike_place_id"], name: "index_star_dislike_places_on_dislike_place_id"
+    t.index ["school_place_id"], name: "index_star_dislike_places_on_school_place_id"
     t.index ["star_id"], name: "index_star_dislike_places_on_star_id"
   end
 
-  create_table "star_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_dislike_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "event_id"
+    t.bigint "school_subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_star_events_on_event_id"
-    t.index ["star_id"], name: "index_star_events_on_star_id"
+    t.index ["school_subject_id"], name: "index_star_dislike_subjects_on_school_subject_id"
+    t.index ["star_id"], name: "index_star_dislike_subjects_on_star_id"
   end
 
-  create_table "star_games", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_game_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "game_id"
+    t.bigint "game_genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_star_games_on_game_id"
-    t.index ["star_id"], name: "index_star_games_on_star_id"
+    t.index ["game_genre_id"], name: "index_star_game_genres_on_game_genre_id"
+    t.index ["star_id"], name: "index_star_game_genres_on_star_id"
   end
 
   create_table "star_lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -108,92 +109,99 @@ ActiveRecord::Schema.define(version: 20180721071507) do
     t.index ["star_id"], name: "index_star_lessons_on_star_id"
   end
 
-  create_table "star_like_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_like_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "like_place_id"
+    t.bigint "school_event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["like_place_id"], name: "index_star_like_places_on_like_place_id"
+    t.index ["school_event_id"], name: "index_star_like_events_on_school_event_id"
+    t.index ["star_id"], name: "index_star_like_events_on_star_id"
+  end
+
+  create_table "star_like_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "star_id"
+    t.bigint "school_place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_place_id"], name: "index_star_like_places_on_school_place_id"
     t.index ["star_id"], name: "index_star_like_places_on_star_id"
   end
 
-  create_table "star_programs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_like_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "program_id"
+    t.bigint "school_subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["program_id"], name: "index_star_programs_on_program_id"
-    t.index ["star_id"], name: "index_star_programs_on_star_id"
+    t.index ["school_subject_id"], name: "index_star_like_subjects_on_school_subject_id"
+    t.index ["star_id"], name: "index_star_like_subjects_on_star_id"
   end
 
-  create_table "star_strengths", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_school_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "strength_id"
+    t.bigint "school_charge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["star_id"], name: "index_star_strengths_on_star_id"
-    t.index ["strength_id"], name: "index_star_strengths_on_strength_id"
+    t.index ["school_charge_id"], name: "index_star_school_charges_on_school_charge_id"
+    t.index ["star_id"], name: "index_star_school_charges_on_star_id"
   end
 
-  create_table "star_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_school_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "subject_id"
+    t.bigint "school_club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["star_id"], name: "index_star_subjects_on_star_id"
-    t.index ["subject_id"], name: "index_star_subjects_on_subject_id"
+    t.index ["school_club_id"], name: "index_star_school_clubs_on_school_club_id"
+    t.index ["star_id"], name: "index_star_school_clubs_on_star_id"
   end
 
-  create_table "star_weaknesses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "star_strength_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "subject_id"
+    t.bigint "strength_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["star_id"], name: "index_star_weaknesses_on_star_id"
-    t.index ["subject_id"], name: "index_star_weaknesses_on_subject_id"
+    t.index ["star_id"], name: "index_star_strength_tags_on_star_id"
+    t.index ["strength_tag_id"], name: "index_star_strength_tags_on_strength_tag_id"
+  end
+
+  create_table "star_weakness_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "star_id"
+    t.bigint "weakness_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["star_id"], name: "index_star_weakness_tags_on_star_id"
+    t.index ["weakness_tag_id"], name: "index_star_weakness_tags_on_weakness_tag_id"
   end
 
   create_table "stars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", default: "", null: false
-    t.boolean "gender", default: true
+    t.string "name", default: "匿名", null: false
     t.date "birthday", null: false
-    t.bigint "address_id"
-    t.bigint "hometown_id"
-    t.text "career"
-    t.bigint "occupation_id"
-    t.integer "sibling"
-    t.integer "family"
+    t.integer "gender", null: false
+    t.integer "sibling_position"
+    t.integer "family_env"
     t.integer "economic_situation"
-    t.string "holiday_research"
-    t.integer "club"
+    t.bigint "hometown_id"
+    t.bigint "occupation_id"
+    t.bigint "school_club_id"
+    t.text "holiday_research"
     t.integer "preference_for_school"
-    t.boolean "truancy"
-    t.integer "like_comic"
+    t.boolean "truancy_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_stars_on_address_id"
     t.index ["hometown_id"], name: "index_stars_on_hometown_id"
     t.index ["occupation_id"], name: "index_stars_on_occupation_id"
+    t.index ["school_club_id"], name: "index_stars_on_school_club_id"
   end
 
-  create_table "strengths", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+  create_table "strength_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+  create_table "weakness_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "weaknesses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "stars", "locations", column: "address_id"
-  add_foreign_key "stars", "locations", column: "hometown_id"
 end
