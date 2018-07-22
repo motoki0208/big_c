@@ -1,6 +1,6 @@
-class CreateStarLikeEvents < ActiveRecord::Migration[5.1]
+class CreateStarsLikeEvents < ActiveRecord::Migration[5.1]
   def change
-    create_table :star_like_events do |t|
+    create_table :stars_like_events do |t|
       t.references :star
       t.references :school_event
 

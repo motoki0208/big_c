@@ -1,6 +1,6 @@
-class CreateStarSchoolCharges < ActiveRecord::Migration[5.1]
+class CreateStarsSchoolCharges < ActiveRecord::Migration[5.1]
   def change
-    create_table :star_school_charges do |t|
+    create_table :stars_school_charges do |t|
       t.references :star
       t.references :school_charge
 

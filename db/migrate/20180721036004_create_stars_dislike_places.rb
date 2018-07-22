@@ -1,6 +1,6 @@
-class CreateStarDislikePlaces < ActiveRecord::Migration[5.1]
+class CreateStarsDislikePlaces < ActiveRecord::Migration[5.1]
   def change
-    create_table :star_dislike_places do |t|
+    create_table :stars_dislike_places do |t|
       t.references :star
       t.references :school_place
 
