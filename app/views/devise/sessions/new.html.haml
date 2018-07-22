@@ -2,7 +2,6 @@
   .container
     .login-container
       #output
-      .avatar
       .form-box
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
@@ -16,7 +15,8 @@
           - if devise_mapping.rememberable?
             .field
               = f.check_box :remember_me
-              .password__checkbox= f.label :パスワードを記憶
+              .password__checkbox
+              = f.label :remember_me, "パスワードを記憶"
           .actions
             %button.btn.btn-info.btn-block.login{:type => "submit"} ログイン
         = render "devise/shared/links"
