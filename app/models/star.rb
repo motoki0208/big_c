@@ -4,12 +4,12 @@ class Star < ApplicationRecord
   belongs_to              :occupation,   optional: true
   belongs_to              :hometown,     optional: true
   belongs_to              :school_club,  optional: true
-  has_and_belongs_to_many :game_genres
-  has_and_belongs_to_many :contents_genres
+  # has_and_belongs_to_many :game_genres
+  # has_and_belongs_to_many :contents_genres
   has_and_belongs_to_many :lessons
   has_and_belongs_to_many :school_charges
-  has_and_belongs_to_many :weakness_tags
-  has_and_belongs_to_many :strength_tags
+  has_and_belongs_to_many :worry_tags
+  has_and_belongs_to_many :speciality_tags
 
   has_many :like_places,           through: :star_like_places,    source: :school_places
   has_many :star_like_places,      dependent: :destroy

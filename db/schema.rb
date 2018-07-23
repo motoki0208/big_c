@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180721036006) do
 
-  create_table "content_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
-  end
-
-  create_table "game_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
-  end
-
   create_table "hometowns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.index ["name"], name: "index_hometowns_on_name"
@@ -55,6 +47,12 @@ ActiveRecord::Schema.define(version: 20180721036006) do
     t.string "name", null: false
   end
 
+  create_table "speciality_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", default: "匿名", null: false
     t.date "birthday", null: false
@@ -73,15 +71,6 @@ ActiveRecord::Schema.define(version: 20180721036006) do
     t.index ["hometown_id"], name: "index_stars_on_hometown_id"
     t.index ["occupation_id"], name: "index_stars_on_occupation_id"
     t.index ["school_club_id"], name: "index_stars_on_school_club_id"
-  end
-
-  create_table "stars_content_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "star_id"
-    t.bigint "content_genre_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["content_genre_id"], name: "index_stars_content_genres_on_content_genre_id"
-    t.index ["star_id"], name: "index_stars_content_genres_on_star_id"
   end
 
   create_table "stars_dislike_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,15 +98,6 @@ ActiveRecord::Schema.define(version: 20180721036006) do
     t.datetime "updated_at", null: false
     t.index ["school_subject_id"], name: "index_stars_dislike_subjects_on_school_subject_id"
     t.index ["star_id"], name: "index_stars_dislike_subjects_on_star_id"
-  end
-
-  create_table "stars_game_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "star_id"
-    t.bigint "game_genre_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_genre_id"], name: "index_stars_game_genres_on_game_genre_id"
-    t.index ["star_id"], name: "index_stars_game_genres_on_star_id"
   end
 
   create_table "stars_lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -192,12 +172,6 @@ ActiveRecord::Schema.define(version: 20180721036006) do
     t.index ["weakness_tag_id"], name: "index_stars_weakness_tags_on_weakness_tag_id"
   end
 
-  create_table "strength_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "text", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -217,7 +191,7 @@ ActiveRecord::Schema.define(version: 20180721036006) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "weakness_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "worry_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
