@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180721036006) do
+ActiveRecord::Schema.define(version: 20180723083046) do
+
+  create_table "addictions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "title", null: false
+    t.text "summary", null: false
+    t.text "addicted_points"
+    t.text "difficult_points"
+    t.text "trigger"
+    t.text "future_aim"
+    t.text "trying_things"
+    t.text "message"
+    t.integer "status"
+    t.bigint "star_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["star_id"], name: "index_addictions_on_star_id"
+  end
 
   create_table "hometowns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
