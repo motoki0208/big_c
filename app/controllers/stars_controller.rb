@@ -4,7 +4,8 @@ class StarsController < ApplicationController
   # GET /stars
   # GET /stars.json
   def index
-    @stars = Star.all
+    @q = Star.ransack(params[:q])
+    @stars = @q.result(distinct: true)
   end
 
   # GET /stars/1
