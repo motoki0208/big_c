@@ -1,5 +1,4 @@
 = render 'shared/header'
 = render 'shared/search_head'
 = render 'shared/addiction_card'
-#user-modal.modal.fade{tabindex:"-1", role:"dialog", aria:{hidden:"true"}}
-  = render partial: 'shared/user_search_form', locals: { q: @q }
+= render partial: 'shared/user_search_form', locals: { q: @q }

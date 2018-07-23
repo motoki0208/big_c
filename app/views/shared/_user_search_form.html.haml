@@ -1,166 +1,167 @@
-.modal-dialog
-  #modal_search_condition.modal-content
-    .box_search_form
-      %ul.search_tab_menu
-        %li.tab_menu_item.is_current.w100p
-          %a あなたの希望条件
-      = search_form_for q, url:stars_path, remote:true, html:{id: 'search_condition_form'} do |f|
-        .search_form_inner
-          %table#search_condition_table.box_user_detail
-            %tbody
-              %tr
-                %th 年齢
-                %td#search-age.search_age
-                  =f.select :birthday_to_age_gteq, options_for_select((18..65).map{|n| ["#{n}", n]}),{include_blank:"こだわらない"}, {class:"hasCustomSelect search-select-age"}
-                  %span.customSelect
-                    %span.customSelectInner こだわらない
-                  %span 〜
-                  =f.select :birthday_to_age_lteq, options_for_select((18..65).map{|n| ["#{n}", n]}), {include_blank:"こだわらない"}, {class:"hasCustomSelect search-select-age"}
-                  %span.customSelect
-                    %span.customSelectInner こだわらない
-              -# %tr#search_condition_item_row_residence.search_condition
-              -#   %th 居住地
-              -#   %td#residence.search_residence
-              -#     .form_block.nocustom
-              -#       =select_tag 'q[wide_address_in][]', options_for_select(User.enums_i18n_ransack(:wide_address)),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-              -#       %span.customSelect
-              -#         %span.customSelectInner こだわらない
-              -#       =select_tag 'q[narrow_address_id_in][]', options_from_collection_for_select(Location.where(category:0), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-              -#       %span.customSelect
-              -#         %span.customSelectInner こだわらない
-              -#     %a.button_f.button_white_a.add_form_btn 追加
-              -# %tr#search_condition_item_row_job.sortable_row
-              -#   %th 職業
-              -#   /
-              -#   %td.search_job
-              -#     .form_block
-              -#       =f.collection_select :occupation_id_eq, Occupation.all, :id, :name, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
-              -#       %span.customSelect
-              -#         %span.customSelectInner こだわらない
-              -#       =f.text_field :occupation_name_cont, placeholder: "詳細、会社名など"
+#user-modal.modal.fade{tabindex:"-1", role:"dialog", aria:{hidden:"true"}}
+  .modal-dialog
+    #modal_search_condition.modal-content
+      .box_search_form
+        %ul.search_tab_menu
+          %li.tab_menu_item.is_current.w100p
+            %a あなたの希望条件
+        = search_form_for q, url:stars_path, html:{id: 'search_condition_form'} do |f|
+          .search_form_inner
+            %table#search_condition_table.box_user_detail
+              %tbody
+                %tr
+                  %th 年齢
+                  %td#search-age.search_age
+                    =f.select :birthday_to_age_gteq, options_for_select((18..65).map{|n| ["#{n}", n]}),{include_blank:"こだわらない"}, {class:"hasCustomSelect search-select-age"}
+                    %span.customSelect
+                      %span.customSelectInner こだわらない
+                    %span 〜
+                    =f.select :birthday_to_age_lteq, options_for_select((18..65).map{|n| ["#{n}", n]}), {include_blank:"こだわらない"}, {class:"hasCustomSelect search-select-age"}
+                    %span.customSelect
+                      %span.customSelectInner こだわらない
+                -# %tr#search_condition_item_row_residence.search_condition
+                -#   %th 居住地
+                -#   %td#residence.search_residence
+                -#     .form_block.nocustom
+                -#       =select_tag 'q[wide_address_in][]', options_for_select(User.enums_i18n_ransack(:wide_address)),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+                -#       %span.customSelect
+                -#         %span.customSelectInner こだわらない
+                -#       =select_tag 'q[narrow_address_id_in][]', options_from_collection_for_select(Location.where(category:0), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+                -#       %span.customSelect
+                -#         %span.customSelectInner こだわらない
+                -#     %a.button_f.button_white_a.add_form_btn 追加
+                -# %tr#search_condition_item_row_job.sortable_row
+                -#   %th 職業
+                -#   /
+                -#   %td.search_job
+                -#     .form_block
+                -#       =f.collection_select :occupation_id_eq, Occupation.all, :id, :name, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
+                -#       %span.customSelect
+                -#         %span.customSelectInner こだわらない
+                -#       =f.text_field :occupation_name_cont, placeholder: "詳細、会社名など"
 
-              -# %tr#search_condition_item_row_education.sortable_row
-              -#   %th 学歴
-              -#   %td.search_educational
-              -#     %ul.form_list
-              -#       %li.form_item.do_not_care
-              -#         =check_box_tag 'q[academic_background_in][]',"", checked: true
-              -#         %label.for_items.do_not_care
-              -#           こだわらない
-              -#       -User::AcademicBackground.each do |ele|
-              -#         %li.form_item
-              -#           =check_box_tag 'q[academic_background_in][]', ele
-              -#           %label.for_items
-              -#             =ele
-              -#     =f.text_field :school_detail_cont, placeholder: "学校名"
-              -# %tr#search_condition_item_row_height.sortable_row
-              -#   %th 身長
-              -#   %td#height.search_height
-              -#     =f.select :tall_gteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{include_blank:"こだわらない"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
-              -#     %span 〜
-              -#     =f.select :tall_lteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{ include_blank:"こだわらない"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
-              -# %tr#search_condition_item_row_lodger.sortable_row
-              -#   %th
-              -#     同居人
-              -#     %p.note 複数可
-              -#   %td
-              -#     /
-              -#     %ul.form_list
-              -#       %li.form_item.do_not_care
-              -#         =check_box_tag 'q[housemate_in][]', "", checked: true
-              -#         %label.for_items.do_not_care
-              -#           こだわらない
-              -#       -User::Housemate.each do |ele|
-              -#         %li.form_item
-              -#           =check_box_tag 'q[housemate_in][]', ele, false
-              -#           %label.for_items
-              -#             =ele
-              -# %tr#search_condition_item_row_drinking.sortable_row
-              -#   %th
-              -#     お酒
-              -#     %p.note 複数可
-              -#   %td
-              -#     %ul.form_list
-              -#       %li.form_item.do_not_care
-              -#         =check_box_tag 'q[alcohol_in][]', "", checked: true
-              -#         %label.for_items.do_not_care
-              -#           こだわらない
-              -#       -User::Alcohol.each do |ele|
-              -#         %li.form_item
-              -#           =check_box_tag 'q[alcohol_in][]', ele, false
-              -#           %label.for_items
-              -#             =ele
-              -# %tr#search_condition_item_row_smoking.sortable_row
-              -#   %th タバコ
-              -#   %td.search_order
-              -#     =f.select :cigarettes_eq, User::Cigarettes,{include_blank:"選択してください"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
-              -# %tr#search_condition_item_row_body_build.sortable_row
-              -#   %th 体型
-              -#   %td
-              -#     %ul.form_list
-              -#       %li.form_item.do_not_care
-              -#         =check_box_tag 'q[body_type_in][]', "" , checked: true
-              -#         %label.for_items.do_not_care
-              -#           こだわらない
-              -#       -User::BodyType.each do |ele|
-              -#         %li.form_item
-              -#           =check_box_tag 'q[body_type_in][]', ele, false
-              -#           %label.for_items
-              -#             =ele
-              -# %tr#search_condition_item_row_last_login.sortable_row
-              -#   %th 最終ログイン
-              -#   /
-              -#   %td.search_educational
-              -#     =f.select :last_sign_in_at_to_time_lteq, User::LogInTime,{include_blank:"選択してください"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
-              -#   /
-              -# %tr#search_condition_item_row_annual_income.sortable_row
-              -#   %th 年収
-              -#   /
-              -#   %td#annual_income.search_income
-              -#     =f.select :income_gt, User::Income, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
+                -# %tr#search_condition_item_row_education.sortable_row
+                -#   %th 学歴
+                -#   %td.search_educational
+                -#     %ul.form_list
+                -#       %li.form_item.do_not_care
+                -#         =check_box_tag 'q[academic_background_in][]',"", checked: true
+                -#         %label.for_items.do_not_care
+                -#           こだわらない
+                -#       -User::AcademicBackground.each do |ele|
+                -#         %li.form_item
+                -#           =check_box_tag 'q[academic_background_in][]', ele
+                -#           %label.for_items
+                -#             =ele
+                -#     =f.text_field :school_detail_cont, placeholder: "学校名"
+                -# %tr#search_condition_item_row_height.sortable_row
+                -#   %th 身長
+                -#   %td#height.search_height
+                -#     =f.select :tall_gteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{include_blank:"こだわらない"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
+                -#     %span 〜
+                -#     =f.select :tall_lteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{ include_blank:"こだわらない"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
+                -# %tr#search_condition_item_row_lodger.sortable_row
+                -#   %th
+                -#     同居人
+                -#     %p.note 複数可
+                -#   %td
+                -#     /
+                -#     %ul.form_list
+                -#       %li.form_item.do_not_care
+                -#         =check_box_tag 'q[housemate_in][]', "", checked: true
+                -#         %label.for_items.do_not_care
+                -#           こだわらない
+                -#       -User::Housemate.each do |ele|
+                -#         %li.form_item
+                -#           =check_box_tag 'q[housemate_in][]', ele, false
+                -#           %label.for_items
+                -#             =ele
+                -# %tr#search_condition_item_row_drinking.sortable_row
+                -#   %th
+                -#     お酒
+                -#     %p.note 複数可
+                -#   %td
+                -#     %ul.form_list
+                -#       %li.form_item.do_not_care
+                -#         =check_box_tag 'q[alcohol_in][]', "", checked: true
+                -#         %label.for_items.do_not_care
+                -#           こだわらない
+                -#       -User::Alcohol.each do |ele|
+                -#         %li.form_item
+                -#           =check_box_tag 'q[alcohol_in][]', ele, false
+                -#           %label.for_items
+                -#             =ele
+                -# %tr#search_condition_item_row_smoking.sortable_row
+                -#   %th タバコ
+                -#   %td.search_order
+                -#     =f.select :cigarettes_eq, User::Cigarettes,{include_blank:"選択してください"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
+                -# %tr#search_condition_item_row_body_build.sortable_row
+                -#   %th 体型
+                -#   %td
+                -#     %ul.form_list
+                -#       %li.form_item.do_not_care
+                -#         =check_box_tag 'q[body_type_in][]', "" , checked: true
+                -#         %label.for_items.do_not_care
+                -#           こだわらない
+                -#       -User::BodyType.each do |ele|
+                -#         %li.form_item
+                -#           =check_box_tag 'q[body_type_in][]', ele, false
+                -#           %label.for_items
+                -#             =ele
+                -# %tr#search_condition_item_row_last_login.sortable_row
+                -#   %th 最終ログイン
+                -#   /
+                -#   %td.search_educational
+                -#     =f.select :last_sign_in_at_to_time_lteq, User::LogInTime,{include_blank:"選択してください"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
+                -#   /
+                -# %tr#search_condition_item_row_annual_income.sortable_row
+                -#   %th 年収
+                -#   /
+                -#   %td#annual_income.search_income
+                -#     =f.select :income_gt, User::Income, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
 
-              -#     〜
-              -#     =f.select :income_lteq, User::Income, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
-              -#     %span.customSelect
-              -#       %span.customSelectInner こだわらない
-              -# %tr#search_condition_item_row_holiday.sortable_row
-              -#   %th
-              -#     休日
-              -#     %p.note 複数可
-              -#   %td
-              -#     %ul.form_list
-              -#       %li.form_item.do_not_care
-              -#         =check_box_tag 'q[holiday][]',"", checked: true
-              -#         %label.for_items.do_not_care
-              -#           こだわらない
-              -#       -User::Holiday.each do |ele|
-              -#         %li.form_item
-              -#           =check_box_tag 'q[holiday][]', ele, false
-              -#           %label.for_items
-              -#             =ele
-              -# %tr#search_condition_item_row_home.sortable_row
-              -#   %th 出身地
-              -#   %td#home.search_home
-              -#     .form_block
-              -#       =select_tag 'q[wide_hometown_in][]', options_for_select(User.enums_i18n_ransack(:wide_hometown)),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-              -#       %span.customSelect
-              -#         %span.customSelectInner こだわらない
-              -#       =select_tag 'q[narrow_hometown_id_in][]', options_from_collection_for_select(Location.where(category:0), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-              -#       %span.customSelect
-              -#         %span.customSelectInner  こだわらない  
-              -#     %a.button_f.button_white_a.add_form_btn{:href => ""} 追加
-          %ul.box_serach_button
-            %li.serach_button_item.w20p
-              %button#cancelSearchConditionBtn.modal-close.button_a.button_white_a{type:"button", data:{dismiss:"modal"}} キャンセル
-            %li.serach_button_item.w40p
-              %button#submitSearchConditionBtn.button_a.button_blue_a{type: "submit",remote:true} この条件で検索する
+                -#     〜
+                -#     =f.select :income_lteq, User::Income, {include_blank:"選択してください"}, {class:"hasCustomSelect"}
+                -#     %span.customSelect
+                -#       %span.customSelectInner こだわらない
+                -# %tr#search_condition_item_row_holiday.sortable_row
+                -#   %th
+                -#     休日
+                -#     %p.note 複数可
+                -#   %td
+                -#     %ul.form_list
+                -#       %li.form_item.do_not_care
+                -#         =check_box_tag 'q[holiday][]',"", checked: true
+                -#         %label.for_items.do_not_care
+                -#           こだわらない
+                -#       -User::Holiday.each do |ele|
+                -#         %li.form_item
+                -#           =check_box_tag 'q[holiday][]', ele, false
+                -#           %label.for_items
+                -#             =ele
+                -# %tr#search_condition_item_row_home.sortable_row
+                -#   %th 出身地
+                -#   %td#home.search_home
+                -#     .form_block
+                -#       =select_tag 'q[wide_hometown_in][]', options_for_select(User.enums_i18n_ransack(:wide_hometown)),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+                -#       %span.customSelect
+                -#         %span.customSelectInner こだわらない
+                -#       =select_tag 'q[narrow_hometown_id_in][]', options_from_collection_for_select(Location.where(category:0), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+                -#       %span.customSelect
+                -#         %span.customSelectInner  こだわらない  
+                -#     %a.button_f.button_white_a.add_form_btn{:href => ""} 追加
+            %ul.box_serach_button
+              %li.serach_button_item.w20p
+                %button#cancelSearchConditionBtn.modal-close.button_a.button_white_a{type:"button", data:{dismiss:"modal"}} キャンセル
+              %li.serach_button_item.w40p
+                %button#submitSearchConditionBtn.button_a.button_blue_a{type: "submit",remote:true} この条件で検索する
