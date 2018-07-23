@@ -1,6 +1,7 @@
 class CreateAddictions < ActiveRecord::Migration[5.1]
   def change
     create_table :addictions do |t|
+      t.text            :image,           null: false
       t.text            :title,           null: false
       t.text            :summary,         null: false
       t.text            :addicted_points
