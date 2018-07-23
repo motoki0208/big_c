@@ -170,22 +170,22 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.index ["star_id"], name: "index_stars_school_clubs_on_star_id"
   end
 
-  create_table "stars_strength_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "stars_speciality_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "strength_tag_id"
+    t.bigint "speciality_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["star_id"], name: "index_stars_strength_tags_on_star_id"
-    t.index ["strength_tag_id"], name: "index_stars_strength_tags_on_strength_tag_id"
+    t.index ["speciality_tag_id"], name: "index_stars_speciality_tags_on_speciality_tag_id"
+    t.index ["star_id"], name: "index_stars_speciality_tags_on_star_id"
   end
 
-  create_table "stars_weakness_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "stars_worry_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
-    t.bigint "weakness_tag_id"
+    t.bigint "worry_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["star_id"], name: "index_stars_weakness_tags_on_star_id"
-    t.index ["weakness_tag_id"], name: "index_stars_weakness_tags_on_weakness_tag_id"
+    t.index ["star_id"], name: "index_stars_worry_tags_on_star_id"
+    t.index ["worry_tag_id"], name: "index_stars_worry_tags_on_worry_tag_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
