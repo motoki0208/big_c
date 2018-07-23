@@ -1,11 +1,15 @@
 class Star < ApplicationRecord
-  enum gender: { male: 1, female: 2 }
+  enum gender:                { male: 0, female: 1 }
+  enum sibling_position:      { the_only: 0, the_eldest: 1, the_second: 2, the_third: 3, the_fourth: 4, the_youngest: 5}
+  enum family_env:            { fatherless: 0, motherless: 1, foster_parents: 3 }
+  enum economic_situation:    { rich: 0, normal: 1, poor: 2 }
+  enum preference_for_school: { love: 0, like: 1, soso: 2, dislike: 3, hate: 4 }
 
   belongs_to              :occupation,   optional: true
   belongs_to              :hometown,     optional: true
   belongs_to              :school_club,  optional: true
-  # has_and_belongs_to_many :game_genres
-  # has_and_belongs_to_many :contents_genres
+  has_one                 :addiction,    dependent: :destroy
+
   has_and_belongs_to_many :lessons
   has_and_belongs_to_many :school_charges
   has_and_belongs_to_many :worry_tags

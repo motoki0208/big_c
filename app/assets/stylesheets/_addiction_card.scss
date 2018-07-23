@@ -1,0 +1,30 @@
+.addiction-card{
+  .card-main-image{
+
+  }
+  .card-left{
+    display: inline-block;
+  }
+  .card-right{
+    display: inline-block;
+    float: right;
+    h4{
+      font-weight: bold;
+      padding-bottom: 4px;
+    }
+  }
+
+  .image-icon{
+    height: 11vw;
+    width: 11vw;
+    min-height: 50px;
+    max-height: 70px;
+    min-width: 50px;
+    max-width: 70px;
+    overflow: hidden;
+    margin: 0 auto;
+    img{
+      height: 100%;
+    }
+  }
+}

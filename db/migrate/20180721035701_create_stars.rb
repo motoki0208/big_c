@@ -1,6 +1,7 @@
 class CreateStars < ActiveRecord::Migration[5.1]
   def change
     create_table :stars do |t|
+      t.text       :avatar,          null: false
       t.string     :name,            null: false, default: "匿名"
       t.date       :birthday,        null: false
       t.integer    :gender,          null: false  #enum
