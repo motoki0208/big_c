@@ -1,5 +1,5 @@
 class Star < ApplicationRecord
-  enum gender: { male: true, female: false }
+  enum gender: { male: 1, female: 2 }
 
   belongs_to              :occupation,   optional: true
   belongs_to              :hometown,     optional: true
