@@ -14,18 +14,18 @@ class Star < ApplicationRecord
   has_and_belongs_to_many :worry_tags
   has_and_belongs_to_many :speciality_tags
 
-  has_many :like_places,           through: :stars_like_places,    source: :school_places
+  has_many :like_places,            through: :stars_like_places,    source: :school_places
   has_many :stars_like_places,      dependent: :destroy
-  has_many :dislike_places,        through: :stars_dislike_places, source: :school_places
+  has_many :dislike_places,         through: :stars_dislike_places, source: :school_places
   has_many :stars_dislike_places,   dependent: :destroy
 
-  has_many :like_events,           through: :stars_like_events,    source: :school_events
+  has_many :like_events,            through: :stars_like_events,    source: :school_events
   has_many :stars_like_events,      dependent: :destroy
-  has_many :dislike_events,        through: :stars_dislike_events, source: :school_events
+  has_many :dislike_events,         through: :stars_dislike_events, source: :school_events
   has_many :stars_dislike_events,   dependent: :destroy
 
-  has_many :like_subjects,         through: :stars_like_subjects,   source: :school_subjects
+  has_many :like_subjects,          through: :stars_like_subjects,   source: :school_subjects
   has_many :stars_like_subjects,    dependent: :destroy
-  has_many :dislike_subjects,      through: :stars_dislike_subjects,source: :school_subjects
+  has_many :dislike_subjects,       through: :stars_dislike_subjects,source: :school_subjects
   has_many :stars_dislike_subjects, dependent: :destroy
 end
