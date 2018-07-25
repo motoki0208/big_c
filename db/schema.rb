@@ -44,10 +44,6 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.index ["name"], name: "index_occupations_on_name"
   end
 
-  create_table "school_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
-  end
-
   create_table "school_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
   end
@@ -65,7 +61,7 @@ ActiveRecord::Schema.define(version: 20180723083046) do
   end
 
   create_table "speciality_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "text", null: false
+    t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -154,15 +150,6 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.index ["star_id"], name: "index_stars_like_subjects_on_star_id"
   end
 
-  create_table "stars_school_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "star_id"
-    t.bigint "school_charge_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["school_charge_id"], name: "index_stars_school_charges_on_school_charge_id"
-    t.index ["star_id"], name: "index_stars_school_charges_on_star_id"
-  end
-
   create_table "stars_school_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "star_id"
     t.bigint "school_club_id"
@@ -210,7 +197,7 @@ ActiveRecord::Schema.define(version: 20180723083046) do
   end
 
   create_table "worry_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "text", null: false
+    t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
