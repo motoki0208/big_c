@@ -6,5 +6,6 @@ class CreateStarsLessons < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
+    add_index  :stars_lessons, [:star_id, :lesson_id], unique: true
   end
 end
