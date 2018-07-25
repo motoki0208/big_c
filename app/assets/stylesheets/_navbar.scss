@@ -1,0 +1,72 @@
+/* addiction#show 検索ヘッダ */
+.fixed-header{
+  padding: 0 25px;
+  height: 50px;
+  &__wrapper{
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  &__left{
+    line-height: 50px;
+    display: inline-block;
+    .form-btn {
+    width: 30vw;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    }
+    .header-icon{
+      padding-right: 10px;
+    }
+  }
+  &__right{
+    float: right;
+    margin-right: 4vw;
+    li{
+      display: inline-block;
+      padding-left: 3vw;
+      a{
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
+/* addiction#show ナビゲーションバー */
+#header_show{
+  height: 40px;
+  width: 100vw;
+  background-color: $white;
+  border-bottom: 1px $borderGray solid;
+  padding-left: 25px;
+  .navibar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .item {
+      height: 40px;
+      line-height: 40px;
+      display: inline-block;
+      white-space: normal;
+      padding: 0 10px;
+      &:hover {
+        border-bottom: 2px solid $orange;
+      }
+      a {
+        color: $orange;
+      }
+    }
+  }
+}
+
