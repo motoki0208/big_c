@@ -6,6 +6,6 @@ class CreateStarsDislikeEvents < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index  :stars_dislike_events, [:star_id, :school_event], unique: true
+    add_index  :stars_dislike_events, [:star_id, :school_event_id], unique: true
   end
 end
