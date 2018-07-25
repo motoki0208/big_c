@@ -22,7 +22,7 @@ class Star < ApplicationRecord
   has_many :stars_dislike_places,   dependent: :destroy
 
   has_many :stars_like_events,      dependent: :destroy
-  has_many :like_events,           through: :stars_like_events,    source: :school_events
+  has_many :like_events,           through: :stars_like_events
   has_many :dislike_events,        through: :stars_dislike_events, source: :school_events
   has_many :stars_dislike_events,   dependent: :destroy
 
@@ -30,6 +30,8 @@ class Star < ApplicationRecord
   has_many :stars_like_subjects,    dependent: :destroy
   has_many :dislike_subjects,      through: :stars_dislike_subjects,source: :school_subjects
   has_many :stars_dislike_subjects, dependent: :destroy
+
+  accepts_nested_attributes_for :like_events
 
   def self.enums_i18n_ransack(enum_name)
     enums = eval("self.#{enum_name.to_s.pluralize}")
