@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725112226) do
+ActiveRecord::Schema.define(version: 20180725113017) do
 
   create_table "content_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180725112226) do
     t.boolean "truancy_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes_count"
     t.index ["hometown_id"], name: "index_stars_on_hometown_id"
     t.index ["occupation_id"], name: "index_stars_on_occupation_id"
     t.index ["school_club_id"], name: "index_stars_on_school_club_id"
