@@ -1,5 +1,8 @@
 class Star < ApplicationRecord
   enum gender: { male: true, female: false }
+  belongs_to :user
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   belongs_to              :occupation,   optional: true
   belongs_to              :hometown,     optional: true
