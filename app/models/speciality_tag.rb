@@ -1,3 +1,4 @@
-class SpcialityTag < ApplicationRecord
-  has_and_belongs_to_many :stars, optional: true
+class SpecialityTag < ApplicationRecord
+  has_many :stars_speciality_tags
+  has_many :stars, through: :stars_speciality_tags
 end

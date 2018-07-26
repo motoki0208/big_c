@@ -14,7 +14,6 @@ class Star < ApplicationRecord
   has_and_belongs_to_many :lessons
   has_and_belongs_to_many :school_charges
   has_and_belongs_to_many :worry_tags
-  has_and_belongs_to_many :speciality_tags
 
   has_many :like_places,           through: :stars_like_places,    source: :school_places
   has_many :stars_like_places,      dependent: :destroy
@@ -30,6 +29,8 @@ class Star < ApplicationRecord
   has_many :stars_like_subjects,    dependent: :destroy
   has_many :dislike_subjects,      through: :stars_dislike_subjects,source: :school_subjects
   has_many :stars_dislike_subjects, dependent: :destroy
+  has_many :stars_speciality_tags
+  has_many :speciality_tags
 
   accepts_nested_attributes_for :like_events
 
