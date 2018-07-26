@@ -6,3 +6,16 @@
 @import './devise';
 @import './star_index';
 
+.c-card__mediaActionButton.c-card__mediaActionButton--favorite {
+    background-image: url(https://png.icons8.com/color/50/000000/hearts.png);
+    background-size: 1.4rem 1.4rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ddd;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.qqq{
+  background-color: yellow;
+}
