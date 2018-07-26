@@ -1,12 +1,13 @@
 = render 'shared/navbar'
 .addiction-show
   = render 'profile_card'
-  .addiction-show__body
-    %h1 ハマっていることのタイトルは最長２０文字
+  .addiction-show__body#summary
+    .summary-title
+      %h1 ハマっていることのタイトルは最長２０文字
     .addiction-card
       .addiciton-img
         = image_tag("https://img.barks.jp/image/review/1000121850/h1.jpg")
-      #summary.addiction-content
+      .addiction-content
         .addiction-text
           %p ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
       #addicted-points.addiction-content
