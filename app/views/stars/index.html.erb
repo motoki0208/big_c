@@ -7,7 +7,7 @@ abcde
   <%= link_to "idが１の人", star_path(@stars.ids[0])%><br>
   <%= link_to "idが2の人", star_path(@stars.ids[1])%><br><br><br>
 
-<% @stars.each do |star| %>
+<% @starss.each do |star| %>
   <div class="sample">
   <% if star.likes_count >= 1 %>
   お気に入りしたストック一覧！！<%= link_to star.name, star_path(star.id)%>さんのページへ
