@@ -6,11 +6,7 @@ class Star < ApplicationRecord
   enum economic_situation:    { rich: 0, normal: 1, poor: 2 }
   enum preference_for_school: { love: 0, like: 1, soso: 2, dislike: 3, hate: 4 }
 
-  belongs_to :user
-  has_many :likes, dependent: :destroy
-  has_many :liking_users, through: :likes, source: :user
-
-
+  belongs_to              :user
   belongs_to              :occupation,   optional: true
   belongs_to              :hometown,     optional: true
   belongs_to              :school_club,  optional: true
@@ -35,4 +31,7 @@ class Star < ApplicationRecord
   has_many :star_like_subjects,    dependent: :destroy
   has_many :dislike_subjects,      through: :star_dislike_subjects,source: :school_subjects
   has_many :star_dislike_subjects, dependent: :destroy
+
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 end
