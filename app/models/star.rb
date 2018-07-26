@@ -13,7 +13,6 @@ class Star < ApplicationRecord
   belongs_to              :school_club,  optional: true
   has_one                 :addiction,    dependent: :destroy
 
-  has_and_belongs_to_many :lessons
   has_and_belongs_to_many :worry_tags
   has_and_belongs_to_many :speciality_tags
 

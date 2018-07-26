@@ -4,10 +4,6 @@ CSV.foreach("db/csv/hometown.csv") do |info|
   Hometown.create(name: info[0])
 end
 
-CSV.foreach("db/csv/lesson.csv") do |info|
-  Lesson.create(name: info[0])
-end
-
 CSV.foreach("db/csv/occupation.csv") do |info|
   Occupation.create(name: info[0], url_13hw: info[1])
 end
