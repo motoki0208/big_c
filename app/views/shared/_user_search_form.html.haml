@@ -19,17 +19,28 @@
                     =f.select :birthday_to_age_lteq, options_for_select((18..65).map{|n| ["#{n}", n]}), {include_blank:"こだわらない"}, {class:"hasCustomSelect search-select-age"}
                     %span.customSelect
                       %span.customSelectInner こだわらない
-                -# %tr#search_condition_item_row_residence.search_condition
-                -#   %th 居住地
-                -#   %td#residence.search_residence
-                -#     .form_block.nocustom
-                -#       =select_tag 'q[wide_address_in][]', options_for_select(User.enums_i18n_ransack(:wide_address)),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-                -#       %span.customSelect
-                -#         %span.customSelectInner こだわらない
-                -#       =select_tag 'q[narrow_address_id_in][]', options_from_collection_for_select(Location.where(category:0), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
-                -#       %span.customSelect
-                -#         %span.customSelectInner こだわらない
-                -#     %a.button_f.button_white_a.add_form_btn 追加
+                %tr#search_condition_item_row_residence.search_condition
+                  %th 出身地
+                  %td#residence.search_residence
+                    .form_block.nocustom
+                      =select_tag 'q[hometown_id_in][]', options_from_collection_for_select(Hometown.order("id"), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+                      %span.customSelect
+                        %span.customSelectInner こだわらない
+                    %a.button_f.button_white_a.add_form_btn 追加
+                %tr#search_condition_item_row_residence.search_condition
+                  %th 得意なこと
+                  %td#residence.search_residence
+                    .form_block.nocustom
+                      %input.tag-search-field.form-control{type:"text", placeholder: "得意なこと", data:{category: "speciality"}}
+                    %ul#tag-list
+                    #search-result.pt-2
+                %tr#search_condition_item_row_residence.search_condition
+                  %th 苦手なこと
+                  %td#residence.search_residence
+                    .form_block.nocustom
+                      %input.tag-search-field.form-control{type:"text", placeholder: "苦手なこと", data:{category: "worry"}}
+                    %ul#tag-list
+                    #search-result.pt-2
                 -# %tr#search_condition_item_row_job.sortable_row
                 -#   %th 職業
                 -#   /
@@ -64,22 +75,135 @@
                 -#     =f.select :tall_lteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{ include_blank:"こだわらない"}, {class:"hasCustomSelect"}
                 -#     %span.customSelect
                 -#       %span.customSelectInner こだわらない
-                -# %tr#search_condition_item_row_lodger.sortable_row
-                -#   %th
-                -#     同居人
-                -#     %p.note 複数可
-                -#   %td
-                -#     /
-                -#     %ul.form_list
-                -#       %li.form_item.do_not_care
-                -#         =check_box_tag 'q[housemate_in][]', "", checked: true
-                -#         %label.for_items.do_not_care
-                -#           こだわらない
-                -#       -User::Housemate.each do |ele|
-                -#         %li.form_item
-                -#           =check_box_tag 'q[housemate_in][]', ele, false
-                -#           %label.for_items
-                -#             =ele
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    性別
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[gender_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.genders.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[gender_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    同居人
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[sibling_position_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.sibling_positions.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[sibling_position_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    家庭環境
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[family_env_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.family_envs.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[family_env_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    経済状況
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[economic_situation_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.economic_situations.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[economic_situation_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    学校が好きか？
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[preference_for_school_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.preference_for_schools.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[preference_for_school_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    不登校経験
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[truancy_experience_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -Star.truancy_experiences.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[truancy_experience_in][]', ele[1], false
+                          %label.for_items
+                            =ele[0]
+                -# = fields_for @school_events do |event|
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    好きだったイベント
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[stars_like_events_school_event_id_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -@school_events.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[stars_like_events_school_event_id_in][]', ele.id, false
+                          %label.for_items
+                            =ele.name
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    嫌いだったイベント
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[stars_dislike_events_school_event_id_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -@school_events.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[stars_dislike_events_school_event_id_in][]', ele.id, false
+                          %label.for_items
+                            =ele.name
                 -# %tr#search_condition_item_row_drinking.sortable_row
                 -#   %th
                 -#     お酒
