@@ -33,6 +33,6 @@ club_c           = SchoolClub.count
     school_club_id:        rand(0..club_c),
     holiday_research:      holiday_searchs[rand(0..holiday_search_c)],
     preference_for_school: rand(0..4),
-    truancy_experience:    Faker::Boolean.boolean(0.5)
+    truancy_experience:    "#{Faker::Boolean.boolean(0.5)}"
     )
 end

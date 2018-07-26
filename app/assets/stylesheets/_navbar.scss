@@ -1,7 +1,8 @@
 /* addiction#show 検索ヘッダ */
 .fixed-header{
   padding: 0 25px;
-  height: 50px;
+  position: fixed;
+  top: 0;
   &__wrapper{
     margin: 0 auto;
     max-width: 1000px;
@@ -21,7 +22,7 @@
     border-radius: 0.25rem;
     }
     .header-icon{
-      padding-right: 10px;
+      padding:0 3px 5px 0;
     }
   }
   &__right{
@@ -42,10 +43,8 @@
 /* addiction#show ナビゲーションバー */
 #header_show{
   height: 40px;
-  width: 100vw;
   background-color: $white;
   border-bottom: 1px $borderGray solid;
-  padding-left: 25px;
   .navibar {
     overflow-x: auto;
     overflow-y: hidden;
@@ -64,7 +63,7 @@
         border-bottom: 2px solid $orange;
       }
       a {
-        color: $orange;
+        color: $fontGray;
       }
     }
   }

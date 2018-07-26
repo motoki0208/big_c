@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.bigint "school_club_id"
     t.text "holiday_research"
     t.integer "preference_for_school"
-    t.boolean "truancy_experience"
+    t.boolean "truancy_experience", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hometown_id"], name: "index_stars_on_hometown_id"
