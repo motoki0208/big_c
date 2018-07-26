@@ -7,7 +7,7 @@ $(window).bind("load", function(){
             var href = $(this).attr("href");
             console.log(href);
             var target = $(href == "#" || href == "" ? 'html' : href);
-            var position = target.offset().top - 115;
+            var position = target.offset().top - 120;
             console.log(position);
             $('html,body').animate({scrollTop: position}, speed, "swing");
             return false;

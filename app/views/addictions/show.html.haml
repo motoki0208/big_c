@@ -1,8 +1,13 @@
 = render 'shared/navbar'
 .addiction-show
+  .addiction-h_profile#profile
+    %h1 プロフィール
   = render 'profile_card'
   .addiction-show__body#summary
     .summary-title
+      %i.fa.fa-lg.fa-star-o{"aria-hidden" => "true"}
+      %i.fa.fa-2x.fa-star{"aria-hidden" => "true"}
+      %i.fa.fa-lg.fa-star-o{"aria-hidden" => "true"}
       %h1 ハマっていることのタイトルは最長２０文字
     .addiction-card
       .addiciton-img
