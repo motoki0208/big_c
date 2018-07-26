@@ -1,4 +1,4 @@
-class StarDislikePlace < ApplicationRecord
+class StarsLikePlace < ApplicationRecord
   belongs_to :school_place
   belongs_to :star
 end
