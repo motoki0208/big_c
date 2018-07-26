@@ -1,5 +1,5 @@
 class Star < ApplicationRecord
-  enum gender:                { male: 0, female: 1 }
+  enum gender:                { male: 0, female: 1, other: 2 }
   enum sibling_position:      { the_only: 0, the_eldest: 1, the_second: 2, the_third: 3, the_fourth: 4, the_youngest: 5}
   enum family_env:            { fatherless: 0, motherless: 1, foster_parents: 3 }
   enum economic_situation:    { rich: 0, normal: 1, poor: 2 }

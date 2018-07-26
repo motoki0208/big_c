@@ -73,8 +73,10 @@ ActiveRecord::Schema.define(version: 20180723083046) do
   create_table "stars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "avatar", null: false
     t.string "name", default: "匿名", null: false
+    t.text "url_name"
+    t.text "url"
     t.date "birthday", null: false
-    t.integer "gender", null: false
+    t.integer "gender"
     t.integer "sibling_position"
     t.integer "family_env"
     t.integer "economic_situation"
