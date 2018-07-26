@@ -1,0 +1,6 @@
+%p#notice= notice
+たちつてと
+
+<%= image_tag(@star.avatar)%>
+<div class = "qqq" ><%= @star.name %></div>
+<%= render partial: 'likes/like', locals: {star: @star} %>
