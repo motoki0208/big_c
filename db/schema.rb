@@ -69,8 +69,10 @@ ActiveRecord::Schema.define(version: 20180723083046) do
   create_table "stars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "avatar", null: false
     t.string "name", default: "匿名", null: false
+    t.text "url_name"
+    t.text "url"
     t.date "birthday", null: false
-    t.integer "gender", null: false
+    t.integer "gender"
     t.integer "sibling_position"
     t.integer "family_env"
     t.integer "economic_situation"
@@ -79,7 +81,7 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.bigint "school_club_id"
     t.text "holiday_research"
     t.integer "preference_for_school"
-    t.boolean "truancy_experience", default: false, null: false
+    t.boolean "truancy_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hometown_id"], name: "index_stars_on_hometown_id"

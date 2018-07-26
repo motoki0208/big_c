@@ -1,0 +1,50 @@
+.addiction-show{
+  width: 100vw;
+  margin: 10px auto;
+  padding: 0 10px;
+  max-width: 1000px;
+  &__body{
+    margin: 50px 0;
+    padding: 0 1.5vw;
+    h1{
+      padding:0 0 3px 3px;
+      font-size: calc(14px + 0.9vw);
+      margin-bottom: 10px;
+      border-bottom: solid 0.6vw $orange;
+    }
+    .addiction-card{
+      border: $default-border;
+      border-radius: 5px;
+      padding-bottom: 3vw;
+     .addiciton-img{
+        max-height: 500px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          border-radius: 5px 5px 0 0;
+        }
+      }
+      #summary{
+        padding-bottom: 20px;
+      }
+      .addiction-content{
+        margin-top: calc(20px + 1vw);
+        padding: 0 3vw;
+        .addiction-h{
+          background: linear-gradient(transparent 60%, #ffff66 60%);
+          h2{
+            padding-left: 10px;
+            font-size: calc(12px + 1vw);
+          }
+        }
+        .addiction-text{
+          width: 95%;
+          margin: 15px auto 0;
+          p{
+            font-size: calc(12px + 0.5vw);
+          }
+        }
+      }
+    }
+  }
+}
