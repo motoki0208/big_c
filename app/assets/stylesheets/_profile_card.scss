@@ -1,0 +1,44 @@
+.profile-card{
+  margin: 0 auto;
+  border: $default-border;
+  border-radius: 10px;
+  padding: 10px;
+  .card-top{
+    text-align: center;
+    float: left;
+    .image-icon{
+      height: 11vw;
+      width: 11vw;
+      min-height: 50px;
+      max-height: 70px;
+      min-width: 50px;
+      max-width: 70px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      img{
+        height: 100%;
+      }
+    }
+    .card-title{
+      border-radius: 20px;
+      background-color: $cream;
+      vertical-align: middle;
+      display: inline-block;
+      padding: 5px 5px 0px 5px;
+    }
+  }
+  .card-bottom{
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    h4{
+      font-weight: bold;
+      padding-bottom: 4px;
+    }
+  }
+}
+.addiction-show{
+  width: 100%;
+  margin: 10px auto 0;
+}
