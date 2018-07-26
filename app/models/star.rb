@@ -1,5 +1,5 @@
 class Star < ApplicationRecord
-  enum gender:                { male: 0, female: 1 }
+  enum gender:                { male: 0, female: 1, other: 2 }
   enum sibling_position:      { the_only: 0, the_eldest: 1, the_second: 2, the_third: 3, the_fourth: 4, the_youngest: 5}
   enum family_env:            { fatherless: 0, motherless: 1, foster_parents: 3 }
   enum economic_situation:    { rich: 0, normal: 1, poor: 2 }
@@ -22,8 +22,8 @@ class Star < ApplicationRecord
 
   has_many :stars_like_events,      dependent: :destroy
   has_many :like_events,           through: :stars_like_events
-  has_many :dislike_events,        through: :stars_dislike_events, source: :school_events
   has_many :stars_dislike_events,   dependent: :destroy
+  has_many :dislike_events,        through: :stars_dislike_events, source: :school_events
 
   has_many :like_subjects,         through: :stars_like_subjects,   source: :school_subjects
   has_many :stars_like_subjects,    dependent: :destroy
