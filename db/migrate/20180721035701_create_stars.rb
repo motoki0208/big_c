@@ -3,8 +3,10 @@ class CreateStars < ActiveRecord::Migration[5.1]
     create_table :stars do |t|
       t.text       :avatar,          null: false
       t.string     :name,            null: false, default: "匿名"
+      t.text       :url_name
+      t.text       :url
       t.date       :birthday,        null: false
-      t.integer    :gender,          null: false  #enum
+      t.integer    :gender              #enum
       t.integer    :sibling_position    #enum
       t.integer    :family_env          #enum
       t.integer    :economic_situation  #enum
@@ -13,7 +15,7 @@ class CreateStars < ActiveRecord::Migration[5.1]
       t.references :school_club
       t.text       :holiday_research
       t.integer    :preference_for_school  #enum
-      t.boolean    :truancy_experience,     null: false, default: false #不登校経験
+      t.boolean    :truancy_experience     #不登校経験
 
       t.timestamps
     end
