@@ -5,7 +5,8 @@ class StarsController < ApplicationController
   # GET /stars.json
   def index
     @stars = Star.all
-    @aaa = Star.find(1)
+    # @aaa = Star.find(1)
+    # @story = Story.find(params[:id])
   end
 
   # GET /stars/1
