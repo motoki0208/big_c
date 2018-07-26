@@ -212,3 +212,17 @@
   box-shadow: none;
   appearance: none;
 }
+
+ul {
+  @include clearfix;
+  .tag {
+    font-size: 12px;
+    float: left;
+    margin: 0 10px 5px 0;
+    color: #788086;
+    display: block;
+    padding: 5px 6px;
+    border-radius: 10px;
+    background-color: #e1f9fa;
+  }
+}
