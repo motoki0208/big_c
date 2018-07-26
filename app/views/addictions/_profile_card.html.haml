@@ -6,6 +6,67 @@
       %span 星野 源
     .card-title
       %span ( シンガーソングライター )
+
   .card-bottom.col-xs-10.col-lg-10
-    %h2.mb-2 日村のバースデイソングを作ること
-    %p ここの欄は１００文字がいい感じに収まる。ハマっていることについて９９文字まで載せ、最後の１文字を...にする。ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+    %a{"data-toggle" => "collapse", :href => "#collapse1"}
+      %ul.profile-list
+        %li.basic-info
+          %h4.mb-1 基本情報
+          .list-contents
+            .list-contents__left
+              %p 生年月日：1999-09-01
+              %p 出身地　：東京都
+              %p 兄弟姉妹：長男
+            .list-contents__right
+              %p 家庭環境：母子家庭
+              %p 経済状況：貧しい
+              %p 不登校　：経験あり
+        %li
+          %h5.mb-1 特技
+          .list-contents
+            %span.tag #タイピングが早い
+        %li
+          %h5.mb-1 悩み
+          .list-contents
+            %span.tag #人とうまく話せない
+            %span.tag #太っている
+            %span.tag #身長が低い
+    .panel-group
+      .panel.panel-default
+        #collapse1.panel-collapse.collapse
+          %a{"data-toggle" => "collapse", :href => "#collapse1"}
+            %ul.profile-list.panel-body
+              %li
+                %h5.mb-1 学生時代の部活動
+                .list-contents
+                  %p 卓球部
+              %li
+                %h5.mb-1 好きだった教科
+                .list-contents
+                  %p 算数
+              %li
+                %h5.mb-1 苦手だった教科
+                .list-contents
+                  %p 体育
+              %li
+                %h5.mb-1 好きだった学校行事
+                .list-contents
+                  %p 終業式
+              %li
+                %h5.mb-1 苦手だった学校行事
+                .list-contents
+                  %p 運動会
+              %li
+                %h5.mb-1 学校内で好きだった場所
+                .list-contents
+                  %p 給食室
+              %li
+                %h5.mb-1 学校内で苦手だった場所
+                .list-contents
+                  %p 運動場
+              %li
+                %h5.mb-1 学校について
+                .list-contents
+                  %p あまり好きではない
+    %a{"data-toggle" => "collapse", :href => "#collapse1"}
+      %h4.mb-1 もっとみる

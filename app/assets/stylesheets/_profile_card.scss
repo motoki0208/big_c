@@ -32,9 +32,32 @@
     display: inline-block;
     float: right;
     padding-top: 10px;
-    h4{
+    h5{
       font-weight: bold;
       padding-bottom: 4px;
+    }
+    .profile-list{
+      li{
+        border-bottom: $default-border;
+        margin-bottom: 5px;
+        span,p{
+          font-size: 14px;
+        }
+        .tag{
+          background-color: $lightBlue;
+        }
+        .list-contents{
+          padding-left: 10px;
+          &__left,&__right{
+            width: 49%;
+            display: inline-block;
+          }
+        }
+      }
+      .basic-info{
+        border-bottom: none;
+        max-width: 500px;
+      }
     }
   }
 }
