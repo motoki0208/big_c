@@ -1,0 +1,10 @@
+%ul.form_list
+  %li.form_item.do_not_care
+    =check_box_tag "q[#{enum}_in][]", "", checked: true
+    %label.for_items.do_not_care
+      こだわらない
+  -Star.enums_i18n_ransack(:"#{enum}").each do |ele|
+    %li.form_item
+      =check_box_tag "q[#{enum}_in][]", ele[1], false
+      %label.for_items
+        =ele[0]
