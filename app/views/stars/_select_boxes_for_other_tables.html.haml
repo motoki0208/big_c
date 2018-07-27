@@ -1,0 +1,9 @@
+%tr#search_condition_item_row_residence.search_condition
+  %th
+    =table_row_name(other_table)
+  %td#residence.search_residence
+    .form_block.nocustom
+      =select_tag "q[#{other_table}_id_in][]", options_from_collection_for_select(other_table.classify.constantize.order("id"), :id, :name),{include_blank:"こだわらない",class:"select-residence-country hasCustomSelect"}
+      %span.customSelect
+        %span.customSelectInner こだわらない
+    %a.button_f.button_white_a.add_form_btn 追加
