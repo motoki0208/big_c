@@ -31,16 +31,16 @@
                   %th 得意なこと
                   %td#residence.search_residence
                     .form_block.nocustom
-                      %input.tag-search-field.form-control{type:"text", placeholder: "得意なこと", data:{category: "speciality"}}
-                    %ul#tag-list
-                    #search-result.pt-2
+                      %input.speciality-tag-search-field.form-control{type:"text", placeholder: "入力してください", data:{category: "speciality"}}
+                    %ul#speciality-tag-list
+                    #speciality-search-result.pt-2
                 %tr#search_condition_item_row_residence.search_condition
                   %th 苦手なこと
                   %td#residence.search_residence
                     .form_block.nocustom
-                      %input.tag-search-field.form-control{type:"text", placeholder: "苦手なこと", data:{category: "worry"}}
-                    %ul#tag-list
-                    #search-result.pt-2
+                      %input.worry-tag-search-field.form-control{type:"text", placeholder: "入力してください", data:{category: "worry"}}
+                    %ul#worry-tag-list
+                    #worry-search-result.pt-2
                 -# %tr#search_condition_item_row_job.sortable_row
                 -#   %th 職業
                 -#   /
@@ -86,7 +86,7 @@
                         =check_box_tag 'q[gender_in][]', "", checked: true
                         %label.for_items.do_not_care
                           こだわらない
-                      -Star.genders.each do |ele|
+                      -Star.enums_i18n_ransack(:gender).each do |ele|
                         %li.form_item
                           =check_box_tag 'q[gender_in][]', ele[1], false
                           %label.for_items
@@ -97,16 +97,17 @@
                     %p.note 複数可
                   %td
                     /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[sibling_position_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.sibling_positions.each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[sibling_position_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
+                    = render partial:"check_boxes_for_enum", locals: { enum: "sibling_position" }
+                    -# %ul.form_list
+                    -#   %li.form_item.do_not_care
+                    -#     =check_box_tag 'q[sibling_position_in][]', "", checked: true
+                    -#     %label.for_items.do_not_care
+                    -#       こだわらない
+                    -#   -Star.sibling_positions.each do |ele|
+                    -#     %li.form_item
+                    -#       =check_box_tag 'q[sibling_position_in][]', ele[1], false
+                    -#       %label.for_items
+                    -#         =ele[0]
                 %tr#search_condition_item_row_lodger.sortable_row
                   %th
                     家庭環境
@@ -202,6 +203,38 @@
                       -@school_events.each do |ele|
                         %li.form_item
                           =check_box_tag 'q[stars_dislike_events_school_event_id_in][]', ele.id, false
+                          %label.for_items
+                            =ele.name
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    好きだった教科
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[stars_like_subjects_school_subject_id_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -SchoolSubject.all.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[stars_like_subjects_school_subject_id_in][]', ele.id, false
+                          %label.for_items
+                            =ele.name
+                %tr#search_condition_item_row_lodger.sortable_row
+                  %th
+                    嫌いだった教科
+                    %p.note 複数可
+                  %td
+                    /
+                    %ul.form_list
+                      %li.form_item.do_not_care
+                        =check_box_tag 'q[stars_dislike_subjects_school_subject_id_in][]', "", checked: true
+                        %label.for_items.do_not_care
+                          こだわらない
+                      -SchoolSubject.all.each do |ele|
+                        %li.form_item
+                          =check_box_tag 'q[stars_dislike_subjects_school_subject_id_in][]', ele.id, false
                           %label.for_items
                             =ele.name
                 -# %tr#search_condition_item_row_drinking.sortable_row
