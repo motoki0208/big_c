@@ -212,6 +212,30 @@
   box-shadow: none;
   appearance: none;
 }
+.search_form_inner {
+  input[type=checkbox]:not(.not_use_default)+label {
+    cursor: pointer;
+  }
+  input[type=checkbox]:not(.not_use_default):checked+label:before {
+    background-position: -27px -105px;
+  }
+  input[type=checkbox]:not(.not_use_default)+label:before {
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    margin: 0 4px 0 0;
+    content: '';
+    vertical-align: top;
+    background-image: $icon-sprites;
+    background-repeat: no-repeat;
+    background-position: 0 -105px;
+  }
+  input[type=checkbox]:not(.not_use_default) {
+    position: absolute;
+    left: -1000px;
+    opacity: 0;
+  }
+}
 
 ul {
   @include clearfix;
@@ -225,4 +249,13 @@ ul {
     border-radius: 10px;
     background-color: #e1f9fa;
   }
+  .tag-search-remove {
+    cursor: pointer;
+  }
 }
+
+#search-result .tags {
+  cursor: pointer;
+}
+
+
