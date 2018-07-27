@@ -1,17 +1,17 @@
 $(document).on('turbolinks:load', function(){
 
-  var tag_list = $("#tag-list")
-  var search_result = $("#search-result")
-  var preWord = $("#tag-search-field").val();
-  var selected_tags = []
+  var worry_tag_list = $("#worry-tag-list")
+  var worry_search_result = $("#worry-search-result")
+  var worry_pre_word = $("#worry-worry-tag-search-field").val();
+  var selected_worry_tags = []
 
   function appendUser(tag){
     var html = `<div class="tags">
                   <a class="tag-search-add chat-group-tag__btn chat-group-tag__btn--add" data-tag-id=${tag.id} data-tag-text=${tag.text} data-tag-number=${tag.number}>#${tag.text}  (${tag.number})</a>
                </div>
                <hr>`
-    if($.inArray(tag.id, selected_tags) == -1){
-      search_result.append(html);
+    if($.inArray(tag.id, selected_worry_tags) == -1){
+      worry_search_result.append(html);
     };
   }
 
@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function(){
     var html = `<div class="chat-group-tag">
                   <p class="chat-group-tag__text">${tag}</p>
                </div>`
-    search_result.append(html)
+    worry_search_result.append(html)
   }
 
   function incrementalSearch(tags){
@@ -36,30 +36,29 @@ $(document).on('turbolinks:load', function(){
   function addGroupUser(id,text){
     var html =`<li class='tag'>
                 ${text}
-                <input value=${id} name='q[stars_speciality_tags_speciality_tag_id_in][]' type='hidden'>
+                <input value=${id} name='q[stars_worry_tags_worry_tag_id_in][]' type='hidden'>
                 <a class='tag-search-remove chat-group-tag__btn chat-group-tag__btn--remove js-remove-btn'>×</a>
               </li>`
-    tag_list.append(html);
-    selected_tags.push(id);
-    console.log(selected_tags)
+    worry_tag_list.append(html);
+    selected_worry_tags.push(id);
   }
 
   function removeGroupUser(event){
     var tag_id = $(event).siblings('input').val()
-    var idx = $.inArray(Number(tag_id), selected_tags)
+    var idx = $.inArray(Number(tag_id), selected_worry_tags)
     $(event).parent().remove();
-    selected_tags.splice(
+    selected_worry_tags.splice(
       idx, 1
     )
   }
 
-  $(".tag-search-field").on("keyup", function(){
-    var input = $(".tag-search-field").val();
+  $(".worry-tag-search-field").on("keyup", function(){
+    var input = $(".worry-tag-search-field").val();
     var tag_category = $(this).data("category")
     if(input.length === 0){
-      search_result.empty();
+      worry_search_result.empty();
     }
-    else if (input != preWord){
+    else if (input != worry_pre_word){
       $.ajax({
         type: 'GET',
         url: '/stars',
@@ -68,17 +67,17 @@ $(document).on('turbolinks:load', function(){
         dataType: 'json'
       })
       .done(function(tags){
-        search_result.empty();
+        worry_search_result.empty();
         incrementalSearch(tags);
       })
       .fail(function(){
         alert('タグ検索に失敗しました')
       })
     }
-    preWord = input;
+    worry_pre_word = input;
   })
 
-  search_result.on("click", ".chat-group-tag__btn--add", function(){
+  worry_search_result.on("click", ".chat-group-tag__btn--add", function(){
     id = $(this).data("tag-id")
     text = $(this).data("tag-text")
     addGroupUser(id, text)
@@ -86,7 +85,7 @@ $(document).on('turbolinks:load', function(){
     $(this).parent().remove();
   })
 
-  tag_list.on("click", ".chat-group-tag__btn--remove", function(e){
+  worry_tag_list.on("click", ".chat-group-tag__btn--remove", function(e){
     removeGroupUser(this);
   })
 })
