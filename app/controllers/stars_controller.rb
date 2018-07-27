@@ -14,6 +14,8 @@ class StarsController < ApplicationController
         case params[:category]
         when "speciality"
           @tags = SpecialityTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
+        when "worry"
+          @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
         end
       }
     end
