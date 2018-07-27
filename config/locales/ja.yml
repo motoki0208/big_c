@@ -34,8 +34,8 @@ ja:
         dislike: 嫌い
         hate: 大嫌い
       truancy_experience:
-        true: あり
-        false: なし
+        :true: あり
+        :false: なし
   date:
     abbr_day_names:
     - 日
