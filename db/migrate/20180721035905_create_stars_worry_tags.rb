@@ -6,5 +6,6 @@ class CreateStarsWorryTags < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index  :stars_worry_tags, [:star_id, :worry_tag_id], unique: true
   end
 end

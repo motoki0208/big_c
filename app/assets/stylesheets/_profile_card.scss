@@ -1,0 +1,64 @@
+.profile-card{
+  border: $default-border;
+  border-radius: 10px;
+  padding: 10px;
+  .card-top{
+    text-align: center;
+    float: left;
+    .image-icon{
+      height: 11vw;
+      width: 11vw;
+      min-height: 50px;
+      max-height: 70px;
+      min-width: 50px;
+      max-width: 70px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      img{
+        height: 100%;
+      }
+    }
+    .card-title{
+      border-radius: 20px;
+      background-color: $cream;
+      vertical-align: middle;
+      display: inline-block;
+      margin-bottom: 0;
+      margin-top: 5px;
+      padding: 0 5px;
+    }
+  }
+  .card-bottom{
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    h5{
+      font-weight: bold;
+      padding-bottom: 4px;
+    }
+    .profile-list{
+      li{
+        border-bottom: $default-border;
+        margin-bottom: 5px;
+        span,p{
+          font-size: 14px;
+        }
+        .tag{
+          background-color: $lightBlue;
+        }
+        .list-contents{
+          padding-left: 10px;
+          &__left,&__right{
+            width: 49%;
+            display: inline-block;
+          }
+        }
+      }
+      .basic-info{
+        border-bottom: none;
+        max-width: 500px;
+      }
+    }
+  }
+}

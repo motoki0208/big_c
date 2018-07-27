@@ -1,0 +1,63 @@
+.addiction-show{
+  width: 100vw;
+  margin: 10px auto;
+  padding: 0 10px;
+  max-width: 1000px;
+  .addiction-h_profile{
+      text-align: center;
+      width: 200px;
+      margin: 50px auto 10px;
+      font-weight: bold;
+      font-size: calc(14px + 0.9vw);
+      border-bottom: solid 5px $borderGray;
+  }
+  &__body{
+    margin: 100px 0;
+    padding: 0 1.5vw;
+    .summary-title {
+      border-bottom: solid 5px $lightOrange;
+      text-align: center;
+      h1 {
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: calc(14px + 0.9vw);
+      }
+      i{
+        color: $orange;
+        padding: 0 0.1vw;
+      }
+    }
+    // #summary以下のコンテンツ
+    .addiction-card{
+      border: $default-border;
+      border-radius: 5px;
+      padding-bottom: 3vw;
+     .addiciton-img{
+        max-height: 500px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          border-radius: 5px 5px 0 0;
+        }
+      }
+      .addiction-content{
+        margin-top: calc(40px + 1vw);
+        padding: 0 3vw;
+        .addiction-h{
+          background: linear-gradient(transparent 60%, #ffff66 60%);
+          h2{
+            padding-left: 10px;
+            font-size: calc(12px + 1vw);
+          }
+        }
+        .addiction-text{
+          width: 95%;
+          margin: 15px auto 0;
+          p{
+            font-size: calc(12px + 0.5vw);
+          }
+        }
+      }
+    }
+  }
+}

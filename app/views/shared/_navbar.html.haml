@@ -1,0 +1,29 @@
+.fixed-header{style: "position: sticky; top: 0px; z-index: 5"}
+  .fixed-header__wrapper
+    .fixed-header__left
+      = image_tag("starfish.jpeg", class: "header-icon", size: "30x30")
+      %input#openSearchConditionBtn.form-btn{"aria-label" => "Search", placeholder: "Search", type: "text"}/
+    %ul.fixed-header__right
+      %li.nav-item
+        %a{href: "#"} 閲覧履歴
+      %li.nav-item
+        %a{href: "#"} お気に入り
+
+    #header_show.clearfix
+      %ul.navibar
+        %li.item
+          %a{href: "#profile", class: "scroll"} どんな人
+        %li.item
+          %a{href: "#summary", class: "scroll"} 夢中なこと
+        %li.item
+          %a{href: "#addicted-points", class: "scroll"} 楽しいところ
+        %li.item
+          %a{href: "#difficult-points", class: "scroll"} 大変なところ
+        %li.item
+          %a{href: "#trigger", class: "scroll"} ハマったきっかけ
+        %li.item
+          %a{href: "#future-aim", class: "scroll"} 将来の目標
+        %li.item
+          %a{href: "#trying-things", class: "scroll"} 日々取り組んでいること
+        %li.item
+          %a{href: "#message", class: "scroll"} メッセージ
