@@ -75,103 +75,12 @@
                 -#     =f.select :tall_lteq, options_for_select((130..200).map{|n| ["#{n}cm", n]}),{ include_blank:"こだわらない"}, {class:"hasCustomSelect"}
                 -#     %span.customSelect
                 -#       %span.customSelectInner こだわらない
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    性別
-                    %p.note 複数可
-                  %td
-                    /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[gender_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.enums_i18n_ransack(:gender).each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[gender_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    同居人
-                    %p.note 複数可
-                  %td
-                    /
-                    = render partial:"check_boxes_for_enum", locals: { enum: "sibling_position" }
-                    -# %ul.form_list
-                    -#   %li.form_item.do_not_care
-                    -#     =check_box_tag 'q[sibling_position_in][]', "", checked: true
-                    -#     %label.for_items.do_not_care
-                    -#       こだわらない
-                    -#   -Star.sibling_positions.each do |ele|
-                    -#     %li.form_item
-                    -#       =check_box_tag 'q[sibling_position_in][]', ele[1], false
-                    -#       %label.for_items
-                    -#         =ele[0]
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    家庭環境
-                    %p.note 複数可
-                  %td
-                    /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[family_env_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.family_envs.each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[family_env_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    経済状況
-                    %p.note 複数可
-                  %td
-                    /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[economic_situation_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.economic_situations.each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[economic_situation_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    学校が好きか？
-                    %p.note 複数可
-                  %td
-                    /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[preference_for_school_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.preference_for_schools.each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[preference_for_school_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
-                %tr#search_condition_item_row_lodger.sortable_row
-                  %th
-                    不登校経験
-                    %p.note 複数可
-                  %td
-                    /
-                    %ul.form_list
-                      %li.form_item.do_not_care
-                        =check_box_tag 'q[truancy_experience_in][]', "", checked: true
-                        %label.for_items.do_not_care
-                          こだわらない
-                      -Star.truancy_experiences.each do |ele|
-                        %li.form_item
-                          =check_box_tag 'q[truancy_experience_in][]', ele[1], false
-                          %label.for_items
-                            =ele[0]
+                = render partial:"check_boxes_for_enum", locals: { enum: "gender" }
+                = render partial:"check_boxes_for_enum", locals: { enum: "sibling_position" }
+                = render partial:"check_boxes_for_enum", locals: { enum: "family_env" }
+                = render partial:"check_boxes_for_enum", locals: { enum: "economic_situation" }
+                = render partial:"check_boxes_for_enum", locals: { enum: "preference_for_school" }
+                = render partial:"check_boxes_for_enum", locals: { enum: "truancy_experience" }
                 -# = fields_for @school_events do |event|
                 %tr#search_condition_item_row_lodger.sortable_row
                   %th
@@ -184,7 +93,7 @@
                         =check_box_tag 'q[stars_like_events_school_event_id_in][]', "", checked: true
                         %label.for_items.do_not_care
                           こだわらない
-                      -@school_events.each do |ele|
+                      -SchoolEvent.all.each do |ele|
                         %li.form_item
                           =check_box_tag 'q[stars_like_events_school_event_id_in][]', ele.id, false
                           %label.for_items
@@ -200,7 +109,7 @@
                         =check_box_tag 'q[stars_dislike_events_school_event_id_in][]', "", checked: true
                         %label.for_items.do_not_care
                           こだわらない
-                      -@school_events.each do |ele|
+                      -SchoolEvent.all.each do |ele|
                         %li.form_item
                           =check_box_tag 'q[stars_dislike_events_school_event_id_in][]', ele.id, false
                           %label.for_items
