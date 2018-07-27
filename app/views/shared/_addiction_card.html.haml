@@ -1,9 +1,6 @@
 .album.py-5.bg-light
   .container
     .row
-      -@stars.each do |star|
-        =star.name
-        =star.gender
       - 9.times do |i|
         .addiction-card.col-md-4.col-6.pr-1.pl-1.pb-4
           = link_to "#" do
