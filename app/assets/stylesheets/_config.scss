@@ -21,6 +21,8 @@ button,.btn{
   border: none;
   &:focus,&:hover{
     outline: 0;
+  }
+  &:hover{
     opacity: 0.7;
   }
 }
@@ -33,7 +35,6 @@ a{
   &:focus{
     text-decoration: none;
     color: $fontBlack;
-    opacity: 0.5;
   }
   &:hover{
     text-decoration: none;
