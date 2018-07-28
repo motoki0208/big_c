@@ -1,7 +1,7 @@
 <%= render partial: 'addictions/addictions', collection: @addictions, as: :addiction %>
   <%= link_to "idが１の人", addiction_path(@addictions.ids[0])%><br>
   <%= link_to "idが2の人", addiction_path(@addictions.ids[1])%><br><br><br>
-
+<%= link_to "idが１の人", addiction_path(@addictions.ids[2])%><br>
 <% @addictions.each do |addiction| %>
   <div class="sample">
   <% if addiction.likes_count >= 1 %>
