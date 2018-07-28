@@ -51,3 +51,4 @@
     = link_to "#",data: {id: ''},class: 'favorite-btn', id: "like-button" do
       .favorite-btn__star
         %p ★
+= render partial: 'likes/like', locals: {addiction: @addiction}
