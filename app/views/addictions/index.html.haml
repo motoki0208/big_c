@@ -1,5 +1,19 @@
 = render 'shared/header'
 = render 'shared/head_jumbotron'
 = render 'shared/search_head'
-= render 'shared/addiction_card'
-= render partial: 'shared/user_search_form', locals: { q: @q }
+.introduction
+  .introduction__box
+    %h1 こんなサイトです！
+.addictions
+  .addictions__feature
+    %h1.title 特集
+  .addicitons__job
+    %h2.title こんな仕事にハマってます！
+  = render 'shared/addiction_card'
+  .addicitons__hobby
+    %h2.title こんな趣味にハマってます！
+  = render 'shared/addiction_card'
+  .addictions__browsed
+    %h2.title 過去に見たもの
+  = render 'shared/addiction_card'
+  / = render partial: 'shared/user_search_form', locals: { q: @q }

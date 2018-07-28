@@ -1,0 +1,38 @@
+.introduction{
+  background-color: $common_page_box_background;
+  padding: 50px 0;
+  &__box{
+    min-height: 100px;
+    height: 10vw;
+    width: 80%;
+    max-width: 1150px;
+    margin: 0px auto;
+    background-color: $lightOrange;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    h1{
+      line-height: 10vw;
+    }
+  }
+}
+.addictions{
+  background-color: $common_page_box_background;
+  width: 100vw;
+  .title{
+    width: 80%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+  &__feature{
+  }
+  &__job{
+    overflow-x: scroll;
+  }
+  &__hobby{
+
+  }
+  &__browsed{
+
+  }
+}
