@@ -6,5 +6,6 @@ class CreateStarsDislikeSubjects < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index  :stars_dislike_subjects, [:star_id, :school_subject_id], unique: true
   end
 end

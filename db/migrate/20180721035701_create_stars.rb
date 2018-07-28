@@ -13,7 +13,6 @@ class CreateStars < ActiveRecord::Migration[5.1]
       t.references :hometown
       t.references :occupation
       t.references :school_club
-      t.text       :holiday_research
       t.integer    :preference_for_school  #enum
       t.boolean    :truancy_experience     #不登校経験
 

@@ -6,5 +6,6 @@ class CreateStarsLikeSubjects < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
+    add_index  :stars_like_subjects, [:star_id, :school_subject_id], unique: true
   end
 end
