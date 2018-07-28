@@ -6,6 +6,7 @@
       %span 星野 源
     .card-title
       %span ( シンガーソングライター )
+      = render partial: 'likes/like', locals: {addiction: @addiction}
 
   .card-bottom.col-xs-10.col-lg-9
     %a{"data-toggle" => "collapse", :href => "#collapse1"}
