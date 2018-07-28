@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180728023753) do
+ActiveRecord::Schema.define(version: 20180728024856) do
 
   create_table "addictions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "image", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180728023753) do
     t.bigint "star_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes_count"
     t.index ["star_id"], name: "index_addictions_on_star_id"
   end
 
