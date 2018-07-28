@@ -112,6 +112,11 @@
         text-align: left;
         vertical-align: middle;
         border: $default-border;
+        span.td_scroll {
+          max-height: 120px;
+          overflow: scroll;
+          display: block;
+        }
       }
       .close_form_btn {
         font-size: 14px;
