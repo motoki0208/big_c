@@ -15,7 +15,7 @@ class LikesController < ApplicationController
 
   def set_variables
     @addiction = Addiction.find(params[:addiction_id])
-    @id_name = "#like-link-#{@addiction.id}"
+    @id_name = "#like-button-#{@addiction.id}"
   end
 
 end
