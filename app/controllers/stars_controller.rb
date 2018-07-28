@@ -63,6 +63,10 @@ class StarsController < ApplicationController
     end
   end
 
+  def like_detail
+    @starss = Star.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_star

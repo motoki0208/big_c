@@ -1,0 +1,10 @@
+お気に入り(自分がハートマークをつけたもの)のページ<br>
+<br><br><br>
+<% @starss.each do |star| %>
+  <div class="sample">
+  <% if star.likes_count >= 1 %>
+  <%= link_to star.name, star_path(star.id)%>さんのページへ
+  <% else %>
+  <% end %>
+</div>
+<% end %>

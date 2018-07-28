@@ -7,11 +7,13 @@ abcde
   <%= link_to "idが１の人", star_path(@stars.ids[0])%><br>
   <%= link_to "idが2の人", star_path(@stars.ids[1])%><br><br><br>
 
-<% @starss.each do |star| %>
-  <div class="sample">
-  <% if star.likes_count >= 1 %>
-  お気に入りしたストック一覧！！<%= link_to star.name, star_path(star.id)%>さんのページへ
-  <% else %>
-  <% end %>
-</div>
-<% end %>
+<%= render 'shared/header' %>
+<%= render 'shared/search_head' %>
+<%= render 'shared/addiction_card' %>
+<%= render partial: 'shared/user_search_form', locals: { q: @q } %>
+
+
+
+<!-- もし現在のユーザーがいいね!ボタンを押したら、表示する。
+else,押さなかったら表示しない,みたいにしたい。今のままだと、
+likes_countが１以上だと表示されちゃう。 -->

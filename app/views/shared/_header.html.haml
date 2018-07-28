@@ -4,7 +4,7 @@
     %li.nav-item.text-nowrap.navbar-nav.pl-3.pr-3
       %a.nav-link{href: "#"} 閲覧履歴
     %li.nav-item.text-nowrap.navbar-nav.pl-3.pr-3
-      %a.nav-link{href: "#"} お気に入り
+      = link_to "お気に入り", like_detail_path, class: "nav-link"
 .jumbotron.jumbotron-fluid
   .container.pt-xs-3.pt-lg-3
     %h1.display-4 bigc
