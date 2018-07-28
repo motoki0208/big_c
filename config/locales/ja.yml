@@ -31,8 +31,8 @@ ja:
         love: 大好き
         like: 好き
         soso: どちらでもない
-        dislike: 嫌い
-        hate: 大嫌い
+        dislike: 好きではない
+        hate: 嫌い
       truancy_experience:
         :true: あり
         :false: なし
