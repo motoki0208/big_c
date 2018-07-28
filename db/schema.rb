@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.index ["name"], name: "index_hometowns_on_name"
   end
 
-  create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
-  end
-
   create_table "occupations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.text "url_13hw"
@@ -79,7 +75,6 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.bigint "hometown_id"
     t.bigint "occupation_id"
     t.bigint "school_club_id"
-    t.text "holiday_research"
     t.integer "preference_for_school"
     t.boolean "truancy_experience"
     t.datetime "created_at", null: false
@@ -117,16 +112,6 @@ ActiveRecord::Schema.define(version: 20180723083046) do
     t.index ["school_subject_id"], name: "index_stars_dislike_subjects_on_school_subject_id"
     t.index ["star_id", "school_subject_id"], name: "index_stars_dislike_subjects_on_star_id_and_school_subject_id", unique: true
     t.index ["star_id"], name: "index_stars_dislike_subjects_on_star_id"
-  end
-
-  create_table "stars_lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "star_id"
-    t.bigint "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_stars_lessons_on_lesson_id"
-    t.index ["star_id", "lesson_id"], name: "index_stars_lessons_on_star_id_and_lesson_id", unique: true
-    t.index ["star_id"], name: "index_stars_lessons_on_star_id"
   end
 
   create_table "stars_like_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
