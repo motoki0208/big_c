@@ -28,7 +28,8 @@
                 = render partial:"check_boxes_for_enum", locals: { enum: "family_env" }
                 = render partial:"check_boxes_for_enum", locals: { enum: "economic_situation" }
                 = render partial:"check_boxes_for_enum", locals: { enum: "preference_for_school" }
-                = render partial:"check_boxes_for_enum", locals: { enum: "truancy_experience" }
+                = render partial:"radio_buttons_for_enum", locals: { enum: "truancy_experience", f:f }
+                = render partial:"check_boxes_for_junction_tables", locals: { other_table: "lesson", junction_table: "stars_lesson" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_event", junction_table: "stars_like_event" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_event", junction_table: "stars_dislike_event" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_subject", junction_table: "stars_like_subject" }
