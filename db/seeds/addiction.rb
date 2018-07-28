@@ -1,11 +1,15 @@
 
+addiction_imgs = ["addiction_img1.jpg","addiction_img2.jpg","addiction_img3.jpg","addiction_img4.jpg"]
 star_c = Star.count
+
+
 
 star_c.times do |i|
   i++
+  @star = Star.find(i)
   Addiction.create(
-    image: "https://img.barks.jp/image/review/1000121850/h1.jpg",
-    title: "ラジオのパーソナリティ",
+    image: addiction_imgs[rand(0..3)],
+    title: @star.occupation.name,
     summary: "ラジオの魅力は、距離感と想像力じゃないでしょうか。ラジオにしかない距離感って絶対あると思うし、生放送にしかない距離感もあると思っています。それから、映像がないことの贅沢さ。みんなそれぞれに想像があって、それぞれのラジオが生まれていく。そんなことが、この前の夏フェス企画で実感することができた。リスナー同士のやり取りがメールでどんどん繋がって、企画を楽しんでくれているのが伝わってすごく面白かった。
     ラジオでしかできない遊び方があって、みんなちゃんと遊び方を知ってることが素晴らしいし、ラジオの未来は明るいなと思いました。",
     addicted_points: "リスナーさんとメールやハガキで面白いやりとりができること",
