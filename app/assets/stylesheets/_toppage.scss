@@ -7,7 +7,7 @@
     width: 80%;
     max-width: 1150px;
     margin: 0px auto;
-    background-color: $lightOrange;
+    background-color: $cream;
     border-radius: 10px;
     text-align: center;
     vertical-align: middle;
@@ -19,20 +19,37 @@
 .addictions{
   background-color: $common_page_box_background;
   width: 100vw;
-  .title{
-    width: 80%;
-    max-width: 1150px;
+  &__feature,&__job,&__hobby,&__browsed{
+    padding-top: 30px;
+    width: 85vw;
     margin: 0 auto;
+    max-width: 1150px;
   }
-  &__feature{
-  }
-  &__job{
-    overflow-x: scroll;
-  }
-  &__hobby{
-
-  }
-  &__browsed{
-
+  .title{
+    padding: 5px;
+    max-width: 250px;
+    h2 {
+      position: relative;
+      font-size: calc(18px + 0.7vw);
+    }
+    h2:before {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-right: solid 15px transparent;
+      border-bottom: solid 15px $lightOrange;
+    }
+    h2:after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      right: 10px;
+      width: 100%;
+      border-bottom: solid 3px $lightOrange;
+    }
   }
 }

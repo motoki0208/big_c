@@ -3,17 +3,18 @@
 = render 'shared/search_head'
 .introduction
   .introduction__box
-    %h1 こんなサイトです！
+    %h1 こんなサイトです！(youtube埋め込むのもあり)
 .addictions
-  .addictions__feature
-    %h1.title 特集
-  .addicitons__job
-    %h2.title こんな仕事にハマってます！
+  .addictions__job
+    .title
+      %h2 仕事・活動
   = render 'shared/addiction_card'
-  .addicitons__hobby
-    %h2.title こんな趣味にハマってます！
+  .addictions__hobby
+    .title
+      %h2 趣味・習い事
   = render 'shared/addiction_card'
   .addictions__browsed
-    %h2.title 過去に見たもの
+    .title
+      %h2 過去に見たもの
   = render 'shared/addiction_card'
   / = render partial: 'shared/user_search_form', locals: { q: @q }
