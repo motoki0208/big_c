@@ -1,19 +1,23 @@
 class AddictionsController < ApplicationController
+  before_action :set_star, only: :show
+
   def index
-    respond_to do |format|
-      format.html {
-        @q = Star.ransack(params[:q])
-        @stars = @q.result(distinct: true)
-        @school_events = SchoolEvent.all
-      }
-      format.json {
-        case params[:category]
-        when "speciality"
-          @tags = SpecialityTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
-        when "worry"
-          @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
-        end
-      }
-    end
+    @q = Star.ransack(params[:q])
+    @stars = @q.result(distinct: true)
+
+    @addictions_job  = Addiction.job.rand10.includes(:star)
+    @addictions_hobby  = Addiction.hobby.rand10.includes(:star)
+    @addictions_browsed = Addiction.all.rand10.includes(:star)
   end
+
+  def show
+  end
+
+  private
+  def set_addiction
+    @addiction = Addiction.find(params[:id])
+  end
+
 end
+
+
