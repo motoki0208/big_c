@@ -11,6 +11,11 @@ before_action :set_addiction, only: [:show]
   def show
   end
 
+  def search
+    @q = Star.ransack(params[:q])
+    @stars = @q.result(distinct: true)
+  end
+  
   private
     def set_addiction
       @addiction = Addiction.find(params[:id])

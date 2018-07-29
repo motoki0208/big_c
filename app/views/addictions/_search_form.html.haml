@@ -5,7 +5,7 @@
         %ul.search_tab_menu
           %li.tab_menu_item.is_current.w100p
             %a あなたの希望条件
-        = search_form_for q, url:stars_path, html:{id: 'search_condition_form'} do |f|
+        = search_form_for q, url:addictions_search_path, html:{id: 'search_condition_form'} do |f|
           .search_form_inner
             %table#search_condition_table.box_user_detail
               %tbody
