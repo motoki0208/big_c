@@ -4,7 +4,6 @@ class AddictionsController < ApplicationController
       format.html {
         @q = Star.ransack(params[:q])
         @stars = @q.result(distinct: true)
-        @school_events = SchoolEvent.all
       }
       format.json {
         case params[:category]
@@ -15,5 +14,10 @@ class AddictionsController < ApplicationController
         end
       }
     end
+  end
+
+  def search
+    @q = Star.ransack(params[:q])
+    @stars = @q.result(distinct: true)
   end
 end
