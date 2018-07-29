@@ -10,6 +10,17 @@ $(window).bind("load", function(){
             $('html,body').animate({scrollTop: position}, speed, "swing");
             return false;
           });
+          // もっとみるボタン文字変更
+          $('.seemore').on("click", function(){
+            $trriger   = $('#trriger-text');
+            if ($trriger.hasClass('seemore-text')){
+                $trriger.removeClass('seemore-text').addClass('close-text');
+                $trriger.text('とじる');
+            } else if ($trriger.hasClass('close-text')){
+                $trriger.removeClass('close-text').addClass('seemore-text');
+                $trriger.text('もっとみる');
+            }
+          });
       });
     };
 });
