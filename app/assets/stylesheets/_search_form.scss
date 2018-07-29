@@ -237,9 +237,7 @@
     left: -1000px;
     opacity: 0;
   }
-}
-
-ul {
+  ul {
   @include clearfix;
   .tag {
     font-size: 12px;
@@ -254,6 +252,7 @@ ul {
   .tag-search-remove {
     cursor: pointer;
   }
+}
 }
 
 #search-result .tags {
