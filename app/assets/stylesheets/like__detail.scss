@@ -36,17 +36,20 @@
   .card-img-top{
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);
-    height: 200px;
+    height: 240px;
       img{
-       width: 100%;  
+       width: 100%;
       }
   }
   .card-main-image{
     overflow: hidden;
-    height: 305px;
+    height: 350px;
   }
   .card__summary{
     overflow: hidden;
-    height: 65px;
+    p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    }
   }
 }
