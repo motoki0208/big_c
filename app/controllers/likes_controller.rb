@@ -1,5 +1,10 @@
 class LikesController < ApplicationController
-  before_action :set_variables
+
+  before_action :set_variables, only: [:like, :unlike]
+
+  def index
+    @addictions = Addiction.all
+  end
 
   def like
     like = current_user.likes.new(addiction_id: @addiction.id)

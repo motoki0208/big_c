@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :stars, only: [:index, :show]
   resources :addictions, only: [:index, :show]
+  resources :likes, only: [:index]
 end
