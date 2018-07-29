@@ -95,9 +95,40 @@ p {
   font-size: 12px;
 }
 
+.album .addiction-card{
+  display: inline-block;
+  max-width: 378px;
+  width: 49%;
+  .card-left{
+    display: inline-block;
+  }
+  .card-right{
+    display: inline-block;
+    float: right;
+    h4{
+      font-weight: bold;
+      padding-bottom: 4px;
+    }
+  }
+  .image-icon{
+    height: 11vw;
+    width: 11vw;
+    min-height: 50px;
+    max-height: 70px;
+    min-width: 50px;
+    max-width: 70px;
+    overflow: hidden;
+    margin: 0 auto;
+    img{
+      height: 100%;
+    }
+  }
+}
+
+
 .card-main-image img{
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
-  height: 200px;
+  height: 240px;
 }
