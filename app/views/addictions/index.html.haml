@@ -17,4 +17,4 @@
     .title
       %h2 過去に見たもの
   = render 'shared/addiction_card'
-  / = render partial: 'shared/user_search_form', locals: { q: @q }
+= render partial: 'search_form', locals: { q: @q }
