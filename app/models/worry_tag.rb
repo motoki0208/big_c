@@ -1,3 +1,4 @@
 class WorryTag < ApplicationRecord
-  has_and_belongs_to_many :stars, optional: true
+  has_many :stars_worry_tags
+  has_many :stars, through: :stars_worry_tags
 end
