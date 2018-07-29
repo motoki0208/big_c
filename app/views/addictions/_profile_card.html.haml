@@ -8,7 +8,7 @@
       %span ( シンガーソングライター )
 
   .card-bottom.col-xs-10.col-lg-9
-    %a{"data-toggle" => "collapse", :href => "#collapse1"}
+    %a{"data-toggle" => "collapse", :href => "#collapse1", class: "seemore"}
       %ul.profile-list
         %li.basic-info
           %h4.mb-1 基本情報
@@ -34,7 +34,7 @@
     .panel-group
       .panel.panel-default
         #collapse1.panel-collapse.collapse
-          %a{"data-toggle" => "collapse", :href => "#collapse1"}
+          %a{"data-toggle" => "collapse", :href => "#collapse1", class: "seemore"}
             %ul.profile-list.panel-body
               %li
                 %h5.mb-1 学生時代の部活動
@@ -68,5 +68,5 @@
                 %h5.mb-1 学校について
                 .list-contents
                   %p あまり好きではない
-    %a{"data-toggle" => "collapse", :href => "#collapse1"}
-      %h4.mb-1 もっとみる
+    %a{"data-toggle" => "collapse", :href => "#collapse1", class: "seemore"}
+      %h4.mb-1#trriger-text.seemore-text もっとみる
