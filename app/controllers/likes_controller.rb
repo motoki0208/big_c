@@ -3,7 +3,7 @@ class LikesController < ApplicationController
   before_action :set_variables, only: [:like, :unlike]
 
   def index
-    @addictions = Addiction.all
+    @addictions = current_user.addictions
   end
 
   def like
