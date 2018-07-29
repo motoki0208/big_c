@@ -94,3 +94,10 @@ h6,
 p {
   font-size: 12px;
 }
+
+.card-main-image img{
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  height: 200px;
+}
