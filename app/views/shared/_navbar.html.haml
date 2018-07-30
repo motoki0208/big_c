@@ -8,7 +8,10 @@
       %li.nav-item
         %a{href: "#"} 閲覧履歴
       %li.nav-item
-        %a{href: "#"} お気に入り
+        = link_to "お気に入り",likes_path
+      - if user_signed_in?
+        %li.nav-item
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
 
     #header_show.clearfix
       %ul.navibar

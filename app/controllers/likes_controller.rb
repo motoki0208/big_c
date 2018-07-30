@@ -9,6 +9,7 @@ class LikesController < ApplicationController
   def like
     like = current_user.likes.new(addiction_id: @addiction.id)
     like.save
+    redirect_to addiction_path(@addiction)
   end
 
   def unlike
