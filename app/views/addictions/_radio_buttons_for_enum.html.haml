@@ -1,13 +1,9 @@
 %tr#search_condition_item_row_lodger.sortable_row
   %th
-    =table_row_name(enum)
+    =translate_to_japanese(enum)
     %p.note
   %td
     %ul.form_list
-      -# %li.form_item.do_not_care
-      -#   =check_box_tag "q[#{enum}_in][]", "", checked: true
-      -#   %label.for_items.do_not_care
-      -#     こだわらない
       -Star.enums_i18n_ransack(:"#{enum}").each do |ele|
         %li.form_item
           = f.radio_button :"#{enum}_in", ele[1]

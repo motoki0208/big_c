@@ -5,34 +5,11 @@
     %ul.navbar-nav
       %li.nav-item.active.pl-xs-3.pl-lg-3
         %a.nav-link.disabled 何から探す？
-      %li.nav-item.dropdown
-        %a#navbarDropdownMenuLink.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
-          好き・得意なこと
-        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-          %a.dropdown-item{href: "#"} 教科
-          %a.dropdown-item{href: "#"} 場所
-          %a.dropdown-item{href: "#"} 行事
-          %a.dropdown-item{href: "#"} 特技
-          %a.dropdown-item{href: "#"} その他
-      %li.nav-item.dropdown
-        %a#navbarDropdownMenuLink.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
-          嫌い・苦手なこと
-        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-          %a.dropdown-item{href: "#"} 教科
-          %a.dropdown-item{href: "#"} 場所
-          %a.dropdown-item{href: "#"} 行事
-          %a.dropdown-item{href: "#"} その他
-      %li.nav-item.dropdown
-        %a#navbarDropdownMenuLink.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
-          悩んでいること
-        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-          %a.dropdown-item{href: "#"} 学校
-          %a.dropdown-item{href: "#"} 家庭
-          %a.dropdown-item{href: "#"} その他
-      %li.nav-item.dropdown
-        %a#navbarDropdownMenuLink.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
-          いろいろ
-        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-          %a.dropdown-item{href: "#"} １
-          %a.dropdown-item{href: "#"} ２
-          %a.dropdown-item{href: "#"} ３
+      %li.nav-item
+        %a.nav-link#searchByPositive 好き・得意なこと
+      %li.nav-item
+        %a.nav-link#searchByNegative 嫌い・苦手なこと
+      %li.nav-item
+        %a.nav-link#searchByWorry 悩んでいること
+      %li.nav-item
+        %a.nav-link#searchByAll いろいろ

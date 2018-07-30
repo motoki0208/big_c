@@ -1,3 +1,23 @@
+.contents{
+  .jumbotron{
+  background-image: image-url("jumbotron.jpg");
+  background-size: cover;
+  color: $white;
+  margin-bottom: -32px;
+  h1{
+    color: $white;
+    }
+  }
+  .navbar-nav{
+    .disabled:hover{
+      opacity: 1;
+    }
+    a{
+      cursor: pointer;
+    }
+  }
+}
+
 .introduction{
   background-color: $common_page_box_background;
   padding: 50px 0;
@@ -16,6 +36,7 @@
     }
   }
 }
+
 .addictions{
   background-color: $common_page_box_background;
   width: 100vw;

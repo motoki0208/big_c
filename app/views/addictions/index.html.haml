@@ -18,3 +18,6 @@
       %h2 過去に見たもの
   = render 'shared/addiction_card'
 = render partial: 'search_form', locals: { q: @q }
+= render partial: 'search_by_positive', locals: { q: @q }
+= render partial: 'search_by_negative', locals: { q: @q }
+= render partial: 'search_by_worry', locals: { q: @q }

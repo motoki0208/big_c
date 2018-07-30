@@ -25,7 +25,7 @@ ja:
         foster_parents: 養子
       economic_situation:
         rich: 裕福
-        normal: 一般家庭
+        normal: ふつう
         poor: 貧しい
       preference_for_school:
         love: 大好き
