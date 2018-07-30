@@ -40,7 +40,10 @@
   max-height: 200px;
   h4{
     font-weight: bold;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
   }
   p{
   display: -webkit-box;

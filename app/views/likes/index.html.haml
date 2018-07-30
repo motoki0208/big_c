@@ -28,5 +28,6 @@
                     = image_tag(addiction.star.avatar,class: "")
                 .card-right.col-md-9.p-0
                   .card-text.pl-2
-                    %h4= addiction.title
+                    %h4.addiction_title{style:"-webkit-box-orient: vertical;"}
+                      = addiction.title
                     %p{style:"-webkit-box-orient: vertical;"}= addiction.summary
