@@ -98,10 +98,16 @@ p {
 
 /*-- 個別共有設定 ---------------------------------- */
 
-.album .addiction-card{
+.motoki-kobayashi{
   display: inline-block;
   max-width: 378px;
   width: 49%;
+  .card-main-image img{
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  height: 240px;
+  }
   .card-left{
     display: inline-block;
   }
@@ -128,10 +134,3 @@ p {
   }
 }
 
-
-.card-main-image img{
-  width: 100%;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-  height: 240px;
-}
