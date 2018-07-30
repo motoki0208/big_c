@@ -2,7 +2,6 @@
 
 #modal_search_condition {
   position: absolute;
-  width: 680px;
   top: 203px;
   left: 0px;
   right: 0px;
@@ -22,7 +21,6 @@
     }
 
     .search_tab_menu {
-      width: 680px;
       margin-bottom: -1px;
       @include clearfix;
 
@@ -58,7 +56,6 @@
     .search_form_inner {
       font-size: 13px;
       box-sizing: border-box;
-      width: 680px;
       padding: 10px 20px 20px;
       border-radius: 4px;
       background-color: $white;
@@ -240,35 +237,34 @@
     left: -1000px;
     opacity: 0;
   }
+  ul {
+  @include clearfix;
+  .tag {
+    font-size: 12px;
+    float: left;
+    margin: 0 10px 5px 0;
+    color: #788086;
+    display: block;
+    padding: 5px 6px;
+    border-radius: 10px;
+    background-color: #e1f9fa;
+  }
+  .tag-search-remove {
+    cursor: pointer;
+  }
+}
 }
 
-// ul {
-//   @include clearfix;
-//   .tag {
-//     font-size: 12px;
-//     float: left;
-//     margin: 0 10px 5px 0;
-//     color: #788086;
-//     display: block;
-//     padding: 5px 6px;
-//     border-radius: 10px;
-//     background-color: #e1f9fa;
-//   }
-//   .tag-search-remove {
-//     cursor: pointer;
-//   }
-// }
+#search-result .tags {
+  cursor: pointer;
+}
 
-// #search-result .tags {
-//   cursor: pointer;
-// }
+.search-select-age {
+  width: 130px;
+}
 
-// .search-select-age {
-//   width: 130px;
-// }
-
-// .select-residence-country {
-//   width: 180px;
-// }
+.select-residence-country {
+  width: 180px;
+}
 
 

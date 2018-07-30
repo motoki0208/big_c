@@ -13,7 +13,6 @@ class StarsController < ApplicationController
           @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
         end
       }
-    end
   end
 
   # GET /stars/1

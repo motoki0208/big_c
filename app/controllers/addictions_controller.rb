@@ -13,6 +13,11 @@ class AddictionsController < ApplicationController
   def show
    @star = @addiction.star
   end
+  
+  def search
+    @q = Star.ransack(params[:q])
+    @stars = @q.result(distinct: true)
+  end
 
   private
   def set_addiction
