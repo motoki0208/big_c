@@ -1,7 +1,8 @@
 .fixed-header{style: "position: sticky; top: 0px; z-index: 5"}
   .fixed-header__wrapper
     .fixed-header__left
-      = image_tag("starfish.jpeg", class: "header-icon", size: "30x30")
+      = link_to root_path do
+        = image_tag("starfish.jpeg", class: "header-icon", size: "30x30")
       %input#openSearchConditionBtn.form-btn{"aria-label" => "Search", placeholder: "Search", type: "text"}/
     %ul.fixed-header__right
       %li.nav-item

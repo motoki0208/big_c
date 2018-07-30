@@ -242,33 +242,33 @@
   }
 }
 
-ul {
-  @include clearfix;
-  .tag {
-    font-size: 12px;
-    float: left;
-    margin: 0 10px 5px 0;
-    color: #788086;
-    display: block;
-    padding: 5px 6px;
-    border-radius: 10px;
-    background-color: #e1f9fa;
-  }
-  .tag-search-remove {
-    cursor: pointer;
-  }
-}
+// ul {
+//   @include clearfix;
+//   .tag {
+//     font-size: 12px;
+//     float: left;
+//     margin: 0 10px 5px 0;
+//     color: #788086;
+//     display: block;
+//     padding: 5px 6px;
+//     border-radius: 10px;
+//     background-color: #e1f9fa;
+//   }
+//   .tag-search-remove {
+//     cursor: pointer;
+//   }
+// }
 
-#search-result .tags {
-  cursor: pointer;
-}
+// #search-result .tags {
+//   cursor: pointer;
+// }
 
-.search-select-age {
-  width: 130px;
-}
+// .search-select-age {
+//   width: 130px;
+// }
 
-.select-residence-country {
-  width: 180px;
-}
+// .select-residence-country {
+//   width: 180px;
+// }
 
 

@@ -1,4 +1,4 @@
-$(window).bind("load", function(){
+$(document).on("turbolinks:load", function(){
     if(document.URL.match("addictions/" + "[0-9０-９]")) {
       $(function() {
           //スクロールスパイ
