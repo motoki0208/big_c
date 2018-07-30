@@ -1,11 +1,11 @@
 .profile-card.pb-4.clearfix
   .card-top.col-lg-3
     .rounded-circle.image-icon
-      = image_tag("http://an-blog.com/wp-content/uploads/2016/07/022-300x300.jpg", class: "")
+      = image_tag("#{@star.avatar}", class: "")
     .card-title
-      %span 星野 源
+      %span=@star.name
     .card-title
-      %span ( シンガーソングライター )
+      %span ( #{@star.occupation.name} )
 
   .card-bottom.col-xs-10.col-lg-9
     %a{"data-toggle" => "collapse", :href => "#collapse1", class: "seemore"}
@@ -14,23 +14,23 @@
           %h4.mb-1 基本情報
           .list-contents
             .list-contents__left
-              %p 生年月日：1999-09-01
-              %p 出身地　：東京都
-              %p 兄弟姉妹：長男
+              %p 生年月日：#{@star.birthday}
+              %p 出身地　：#{@star.hometown.name}
+              %p 兄弟姉妹：#{@star.sibling_position_i18n}
             .list-contents__right
-              %p 家庭環境：母子家庭
-              %p 経済状況：貧しい
-              %p 不登校　：経験あり
+              %p 家庭環境：#{@star.family_env_i18n}
+              %p 経済状況：#{@star.economic_situation_i18n}
+              %p 不登校　：経験#{@star.truancy_experience_i18n}
         %li
           %h5.mb-1 特技
           .list-contents
-            %span.tag #タイピングが早い
+            - @star.speciality_tags.each do |speciality|
+              %span.tag ##{speciality.name}
         %li
           %h5.mb-1 悩み
           .list-contents
-            %span.tag #人とうまく話せない
-            %span.tag #太っている
-            %span.tag #身長が低い
+            - @star.worry_tags.each do |worry|
+              %span.tag ##{worry.name}
     .panel-group
       .panel.panel-default
         #collapse1.panel-collapse.collapse
@@ -39,34 +39,40 @@
               %li
                 %h5.mb-1 学生時代の部活動
                 .list-contents
-                  %p 卓球部
+                  %span.item #{@star.school_club.name}
               %li
                 %h5.mb-1 好きだった教科
                 .list-contents
-                  %p 算数
+                  - @star.like_subjects.each do |subject|
+                    %span.item #{subject.name}
               %li
                 %h5.mb-1 苦手だった教科
                 .list-contents
-                  %p 体育
+                  - @star.dislike_subjects.each do |subject|
+                    %span.item #{subject.name}
               %li
                 %h5.mb-1 好きだった学校行事
                 .list-contents
-                  %p 終業式
+                  - @star.like_events.each do |event|
+                    %span.item #{event.name}
               %li
                 %h5.mb-1 苦手だった学校行事
                 .list-contents
-                  %p 運動会
+                  - @star.dislike_events.each do |event|
+                    %span.item #{event.name}
               %li
                 %h5.mb-1 学校内で好きだった場所
                 .list-contents
-                  %p 給食室
+                  - @star.like_places.each do |place|
+                    %span.item #{place.name}
               %li
                 %h5.mb-1 学校内で苦手だった場所
                 .list-contents
-                  %p 運動場
+                  - @star.dislike_places.each do |place|
+                    %span.item #{place.name}
               %li
                 %h5.mb-1 学校について
                 .list-contents
-                  %p あまり好きではない
+                  %span.item #{@star.preference_for_school_i18n}
     %a{"data-toggle" => "collapse", :href => "#collapse1", class: "seemore"}
       %h4.mb-1#trriger-text.seemore-text もっとみる

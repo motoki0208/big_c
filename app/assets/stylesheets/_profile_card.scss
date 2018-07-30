@@ -43,7 +43,12 @@
         border-bottom: $default-border;
         margin-bottom: 5px;
         span,p{
-          font-size: 14px;
+          font-size: 15px;
+          margin-right: 5px;
+          padding: 0 3px;
+        }
+        .item{
+          background-color: #EFF3F4;
         }
         .tag{
           background-color: $lightBlue;
@@ -53,6 +58,7 @@
           &__left,&__right{
             width: 49%;
             display: inline-block;
+            min-width: 178px;
           }
         }
       }
