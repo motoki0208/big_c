@@ -1,11 +1,11 @@
 .contents{
   .jumbotron{
-  background-image: image-url("jumbotron.jpg");
-  background-size: cover;
-  color: $white;
-  margin-bottom: -32px;
-  h1{
+    background-image: image-url("jumbotron.jpg");
+    background-size: cover;
     color: $white;
+    margin-bottom: -32px;
+    h1{
+      color: $white;
     }
   }
   .navbar-nav{
@@ -52,25 +52,6 @@
     h2 {
       position: relative;
       font-size: calc(18px + 0.7vw);
-    }
-    h2:before {
-      position: absolute;
-      content: '';
-      bottom: -3px;
-      right: 0;
-      width: 0;
-      height: 0;
-      border: none;
-      border-right: solid 15px transparent;
-      border-bottom: solid 15px $lightOrange;
-    }
-    h2:after {
-      position: absolute;
-      content: '';
-      bottom: -3px;
-      right: 10px;
-      width: 100%;
-      border-bottom: solid 3px $lightOrange;
     }
   }
 }
