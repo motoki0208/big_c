@@ -4,12 +4,15 @@ class StarsController < ApplicationController
   # GET /stars
   # GET /stars.json
   def index
-    case params[:category]
-    when "speciality"
-      @tags = SpecialityTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
-    when "worry"
-      @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
-    end
+    respond_to do |format|
+      format.json {
+        case params[:category]
+        when "speciality"
+          @tags = SpecialityTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
+        when "worry"
+          @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
+        end
+      }
   end
 
   # GET /stars/1
