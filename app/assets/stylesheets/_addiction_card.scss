@@ -9,51 +9,59 @@
     &::-webkit-scrollbar {
       display: none;
     }
-    .addiction-card{
-      display: inline-block;
-      max-width: 378px;
-      width: 49%;
-      vertical-align: top;
-      .card-main-image{
-        height: calc(150px + 8vw);
-        overflow: hidden;
-        text-align: center;
-        img{
-          height: 100%;
-        }
-      }
-      .card-left{
-        display: inline-block;
-      }
-      .card-right{
-        display: inline-block;
-        float: right;
-        white-space: normal;
-        overflow: hidden;
-        // width: 100%;
-        max-height: 200px;
-        h4{
-          font-weight: bold;
-          padding-bottom: 4px;
-        }
-        p{
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        }
-      }
-      .image-icon{
-        height: 11vw;
-        width: 11vw;
-        min-height: 50px;
-        max-height: 70px;
-        min-width: 50px;
-        max-width: 70px;
-        overflow: hidden;
-        margin: 0 auto;
-        img{
-          height: 100%;
-        }
-      }
-    }
+  }
+  .addiction-card{
+    display: inline-block;
+    max-width: 378px;
+    width: 49%;
+    vertical-align: top;
+  }
+}
+.card-main-image{
+  height: calc(150px + 8vh);
+  overflow: hidden;
+  text-align: center;
+  img{
+    height: 100%;
+  }
+}
+.card-body {
+  @include clearfix;
+}
+.card-left{
+  display: inline-block;
+}
+.card-right{
+  display: inline-block;
+  float: right;
+  white-space: normal;
+  overflow: hidden;
+  // width: 100%;
+  max-height: 200px;
+  h4{
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  p{
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  min-height: 88px;
+  }
+}
+.image-icon{
+  height: 11vw;
+  width: 11vw;
+  min-height: 50px;
+  max-height: 70px;
+  min-width: 50px;
+  max-width: 70px;
+  overflow: hidden;
+  margin: 0 auto;
+  img{
+    height: 100%;
   }
 }
