@@ -1,22 +1,25 @@
-.container__wrapper
-  .container
-    .login-container
-      #output
-      .form-box
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field
-            = f.label :emailアドレス
-            %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-          .field
-            = f.label :パスワード
-            %br/
-            = f.password_field :password, autocomplete: "off"
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me, class:"check_box_to_remember"
-              .password__checkbox
-              = f.label :remember_me, "パスワードを記憶"
-          .actions
-            %button.btn.btn-info.btn-block.login{:type => "submit"} ログイン
-        = render "devise/shared/links"
+.jumbotron.jumbotron-fluid.mb-0
+  = link_to root_path do
+    .container.pt-xs-3.pt-lg-3
+      %h1.display-4 bigc
+      %p.lead 未来の自分を探そう！
+  .login-container
+    #output
+    .form-box
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.font-gray
+          = f.label :emailアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field.font-gray
+          = f.label :パスワード
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          .field.font-gray
+            = f.check_box :remember_me, class:"check_box_to_remember"
+            .password__checkbox.font-gray
+            = f.label :remember_me, "パスワードを記憶"
+        .actions
+          %button.btn.btn-info.btn-block.login{:type => "submit"} ログイン
+      = render "devise/shared/links"

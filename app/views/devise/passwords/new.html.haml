@@ -1,8 +1,10 @@
-.container__wrapper
-  .container
+.jumbotron.jumbotron-fluid.mb-0
+  = link_to root_path do
+    .container.pt-xs-3.pt-lg-3
+      %h1.display-4 bigc
+      %p.lead 未来の自分を探そう！
     .login-container
       #output
-      .avatar
       .form-box
         = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
           = devise_error_messages!
