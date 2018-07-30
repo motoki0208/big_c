@@ -1,9 +1,10 @@
+= render partial: 'search_form', locals: { q: @q }
 .fixed-header{style: "position: sticky; top: 0px; z-index: 5"}
   .fixed-header__wrapper
     .fixed-header__left
       = link_to root_path do
         = image_tag("starfish.jpeg", class: "header-icon", size: "30x30")
-      %input#openSearchConditionBtn.form-btn{"aria-label" => "Search", placeholder: "Search", type: "text"}/
+      %i.fa.fa-search.fa-lg#openSearchConditionBtn
     %ul.fixed-header__right
       %li.nav-item
         %a{href: "#"} 閲覧履歴
@@ -11,7 +12,7 @@
         = link_to "お気に入り",likes_path
       - if user_signed_in?
         %li.nav-item
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }
 
     #header_show.clearfix
       %ul.navibar

@@ -1,30 +1,33 @@
-.container__wrapper
-  .container
-    .login-container
-      #output
-      .form-box
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = devise_error_messages!
-          .field
-            = f.label :名前
-            %em (20文字まで)
-            %br/
-            = f.text_field :name, autofocus: true, maxlength: "20"
-          .field
-            = f.label :emailアドレス
-            %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-          .field
-            = f.label :パスワード
-            - if @minimum_password_length
-              %em
-                (#{@minimum_password_length}文字以上)
-            %br/
-            = f.password_field :password, autocomplete: "off"
-          .field
-            = f.label :パスワードの確認
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "off"
-          .actions
-            %button.btn.btn-info.btn-block.login{:type => "submit"} 新規会員登録
-        = render "devise/shared/links"
+.jumbotron.jumbotron-fluid.mb-0
+  = link_to root_path do
+    .container.pt-xs-3.pt-lg-3
+      %h1.display-4 bigc
+      %p.lead 未来の自分を探そう！
+  .login-container
+    #output
+    .form-box
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field.font-gray
+          = f.label :名前
+          %em (20文字まで)
+          %br/
+          = f.text_field :name, autofocus: true, maxlength: "20"
+        .field.font-gray
+          = f.label :emailアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field.font-gray
+          = f.label :パスワード
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length}文字以上)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field.font-gray
+          = f.label :パスワードの確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          %button.btn.btn-info.btn-block.login{:type => "submit"} 新規会員登録
+      = render "devise/shared/links"
