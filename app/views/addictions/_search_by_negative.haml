@@ -1,22 +1,17 @@
-#user-modal.modal.fade{tabindex:"-1", role:"dialog", aria:{hidden:"true"}}
+#searchByNegativeModal.modal.fade{tabindex:"-1", role:"dialog", aria:{hidden:"true"}}
   .modal-dialog
     #modal_search_condition.modal-content
       .box_search_form
         %ul.search_tab_menu
           %li.tab_menu_item.is_current.w100p
-            %a いろいろな項目から探す
+            %a 嫌い・苦手なことから探す
         = search_form_for q, url:addictions_search_path, html:{id: 'search_condition_form'} do |f|
           .search_form_inner
             %table#search_condition_table.box_user_detail
               %tbody
-                = render partial:"form_for_tags", locals: { category: "speciality",row_name: "speciality" }
-                = render partial:"form_for_tags", locals: { category: "worry",row_name: "worry&weak" }
-                = render partial:"select_boxes_for_other_tables", locals: { other_table: "school_club" }
-                = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_event", junction_table: "stars_like_event" }
+                = render partial:"form_for_tags", locals: { category: "worry", row_name: "weak" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_event", junction_table: "stars_dislike_event" }
-                = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_subject", junction_table: "stars_like_subject" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_subject", junction_table: "stars_dislike_subject" }
-                = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_place", junction_table: "stars_like_place" }
                 = render partial:"check_boxes_for_junction_tables", locals: { other_table: "school_place", junction_table: "stars_dislike_place" }
                 = render partial:"check_boxes_for_enum", locals: { enum: "preference_for_school" }
                 = render partial:"radio_buttons_for_enum", locals: { enum: "truancy_experience", f:f }

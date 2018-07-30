@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def table_row_name(var)
-    case var
+  def translate_to_japanese(row_name)
+    case row_name
     when "hometown"
       "出身地"
     when "school_club"
@@ -20,16 +20,24 @@ module ApplicationHelper
     when "stars_lesson"
       "習い事"
     when "stars_like_event"
-      "好きな行事"
+      "好きな学校行事"
     when "stars_dislike_event"
-      "嫌いな行事"
+      "嫌いな学校行事"
+    when "stars_like_place"
+      "学校内で好きな場所"
+    when "stars_dislike_place"
+      "学校内で苦手な場所"
     when "stars_like_subject"
       "好きな科目"
     when "stars_dislike_subject"
       "嫌いな科目"
     when "speciality"
-      "得意なこと"
+      "好きなこと・得意なこと"
     when "worry"
+      "悩んでいること"
+    when "worry&weak"
+      "苦手なこと・悩んでいること"
+    when "weak"
       "苦手なこと"
     end
   end
