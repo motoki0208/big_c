@@ -20,6 +20,7 @@ ja:
         the_fourth: 四男・四女
         the_youngest: 末っ子
       family_env:
+        ordinary: 普通
         fatherless: 母子家庭
         motherless: 父子家庭
         foster_parents: 養子

@@ -72,6 +72,8 @@ GEM
     ffi (1.9.25)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    gimei (0.3.0)
+      romaji
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -172,6 +174,8 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    romaji (0.2.4)
+      rake (>= 0.8.0)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
@@ -241,6 +245,7 @@ DEPENDENCIES
   erb2haml
   faker
   font-awesome-rails
+  gimei
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
