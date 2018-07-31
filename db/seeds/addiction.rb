@@ -5,7 +5,7 @@ star_c = Star.count
 
 
 star_c.times do |i|
-  i++
+  i += 1
   @star = Star.find(i)
   Addiction.create(
     image: addiction_imgs[rand(0..3)],
