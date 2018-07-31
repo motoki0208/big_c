@@ -2,7 +2,7 @@ class Star < ApplicationRecord
   # TODO:boolean型はfalse=0、true=1の整合性を保存時に担保する
   enum gender:                { male: 0, female: 1, other: 2 }
   enum sibling_position:      { the_only: 0, the_eldest: 1, the_second: 2, the_third: 3, the_fourth: 4, the_youngest: 5}
-  enum family_env:            { fatherless: 0, motherless: 1, foster_parents: 2 }
+  enum family_env:            { ordinary: 0, fatherless: 1, motherless: 2, foster_parents: 3 }
   enum economic_situation:    { rich: 0, normal: 1, poor: 2 }
   enum preference_for_school: { love: 0, like: 1, soso: 2, dislike: 3, hate: 4 }
   enum truancy_experience: { true: true, false: false }
