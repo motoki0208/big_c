@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
 
   function appendUser(tag){
     var html = `<div class="tags">
-                  <a class="tag-search-add chat-group-tag__btn chat-group-tag__btn--add" data-tag-id=${tag.id} data-tag-text=${tag.text} data-tag-number=${tag.number}>#${tag.text}  (${tag.number})</a>
+                  <a class="tag-search-add chat-group-tag__btn chat-group-tag__btn--add" data-tag-id=${tag.id} data-tag-name=${tag.name} data-tag-number=${tag.number}>#${tag.name}  (${tag.number})</a>
                </div>
                <hr>`
     if($.inArray(tag.id, selected_speciality_tags) == -1){
@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function(){
 
   function appendNoUser(tag){
     var html = `<div class="chat-group-tag">
-                  <p class="chat-group-tag__text">${tag}</p>
+                  <p class="chat-group-tag__name">${tag}</p>
                </div>`
     speciality_search_result.append(html)
   }
@@ -33,9 +33,9 @@ $(document).on('turbolinks:load', function(){
     }
   }
 
-  function addGroupUser(id,text){
+  function addGroupUser(id,name){
     var html =`<li class='tag'>
-                ${text}
+                ${name}
                 <input value=${id} name='q[stars_speciality_tags_speciality_tag_id_in][]' type='hidden'>
                 <a class='tag-search-remove chat-group-tag__btn chat-group-tag__btn--remove js-remove-btn'>×</a>
               </li>`
@@ -55,6 +55,8 @@ $(document).on('turbolinks:load', function(){
   $(".speciality-tag-search-field").on("keyup", function(){
     var input = $(".speciality-tag-search-field").val();
     var tag_category = $(this).data("category")
+    console.log(input)
+    console.log(tag_category)
     if(input.length === 0){
       speciality_search_result.empty();
     }
@@ -79,8 +81,8 @@ $(document).on('turbolinks:load', function(){
 
   speciality_search_result.on("click", ".chat-group-tag__btn--add", function(){
     id = $(this).data("tag-id")
-    text = $(this).data("tag-text")
-    addGroupUser(id, text)
+    name = $(this).data("tag-name")
+    addGroupUser(id, name)
     $(this).parent().next().remove()
     $(this).parent().remove();
   })

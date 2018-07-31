@@ -84,14 +84,13 @@
     }
   }
   .description{
-    margin:2em auto;
+    margin:2em auto 0;
     position: relative;
     padding: calc(12px + 0.1vw) calc(3px + 0.3vw);
     border: solid 2px #ffcb8a;
     border-radius: 3px 0 3px 0;
     max-width: 500px;
-  &:before,&:after
-  {
+  &:before,&:after{
     content: '';
     position: absolute;
     width:10px;
