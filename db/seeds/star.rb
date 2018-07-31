@@ -1,3 +1,56 @@
+
+Star.create(
+    avatar:                "avatar-f.png",
+    name:                  "白柳明香里",
+    url_name:              "白柳のホームページ",
+    url:                   "https://socialfighter.jp/",
+    birthday:              Faker::Date.birthday(20, 60),
+    gender:                1,
+    sibling_position:      1,
+    family_env:            0,
+    economic_situation:    1,
+    hometown_id:           22,
+    occupation_id:         227,
+    school_club_id:        10,
+    preference_for_school: 1,
+    truancy_experience:    "false"
+  )
+
+Star.create(
+   avatar:                "administrator-male.png",
+   name:                  "kobayashi sachio",
+   url_name:              "kobayashi sachioのホームページ",
+   url:                   "https://socialfighter.jp/",
+   birthday:              "1991-07-07",
+   gender:                0,
+   sibling_position:      3,
+   family_env:            0,
+   economic_situation:    1,
+   hometown_id:           29,
+   occupation_id:         432,
+   school_club_id:        25,
+   preference_for_school: 1,
+   truancy_experience:    "true"
+   )
+Star.create(
+    avatar:                "manager.png",
+    name:                  "田畑 幹",
+    url_name:              "田畑 幹のホームページ",
+    url:                   "https://socialfighter.jp/",
+    birthday:              "1993-02-08",
+    gender:                0,
+    sibling_position:      1,
+    family_env:            0,
+    economic_situation:    1,
+    hometown_id:           28,
+    occupation_id:         227,
+    school_club_id:        8,
+    preference_for_school: 1,
+    truancy_experience:    "false"
+)
+
+#-- faker ---------------------------------- 
+
 require 'faker'
 require 'csv'
 require 'gimei'

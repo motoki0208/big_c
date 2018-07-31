@@ -8,9 +8,9 @@ class StarsController < ApplicationController
       format.json {
         case params[:category]
         when "speciality"
-          @tags = SpecialityTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
+          @tags = SpecialityTag.where( 'name Like(?)',"%#{params[:keyword]}%" )
         when "worry"
-          @tags = WorryTag.where( 'text Like(?)',"%#{params[:keyword]}%" )
+          @tags = WorryTag.where( 'name Like(?)',"%#{params[:keyword]}%" )
         end
       }
     end

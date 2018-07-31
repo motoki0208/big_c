@@ -22,12 +22,12 @@
               %p 経済状況：#{@star.economic_situation_i18n}
               %p 不登校　：経験#{@star.truancy_experience_i18n}
         %li
-          %h5.mb-1 特技
+          %h5.mb-1 好きなこと・特技
           .list-contents
             - @star.speciality_tags.each do |speciality|
               %span.tag ##{speciality.name}
         %li
-          %h5.mb-1 悩み
+          %h5.mb-1 苦手なこと・悩み
           .list-contents
             - @star.worry_tags.each do |worry|
               %span.tag ##{worry.name}
