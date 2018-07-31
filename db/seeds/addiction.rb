@@ -1,4 +1,3 @@
-
 # titles = ["劇団で子供達向けの公演をしています！",]
 
 # summarys = ["高校時代の友人たちと立ち上げた劇団で、月に２回小学校で公演を行なっています。昔話などを扱うことが多いですがたまにオリジナルの作品も作っていて、自分が小学生のころに感じていたことや体験したことを題材にしています。高校を卒業後、服飾の学校に行っていたため小道具や衣装などは全て手作りです⭐︎毎週出来上がった小道具たちを持ち寄って練習をするのが楽しいです♪",]
@@ -14,7 +13,6 @@
 
 addiction_imgs = ["addiction_img1.jpg","addiction_img2.jpg","addiction_img3.jpg","addiction_img4.jpg","addiction_img5.jpg","addiction_img6.jpg","addiction_img7.jpg","addiction_img8.jpg","addiction_img9.jpg"]
 star_c = Star.count
-
 
 
 star_c.times do |i|

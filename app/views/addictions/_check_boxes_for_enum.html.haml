@@ -1,0 +1,11 @@
+%tr#search_condition_item_row_lodger.sortable_row
+  %th
+    =translate_to_japanese(enum)
+    %p.note 複数可
+  %td
+    %ul.form_list
+      -Star.enums_i18n_ransack(:"#{enum}").each do |ele|
+        %li.form_item
+          =check_box_tag "q[#{enum}_in][]", ele[1], false
+          %label.for_items
+            =ele[0]

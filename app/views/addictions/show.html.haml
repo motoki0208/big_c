@@ -2,52 +2,57 @@
 .addiction-show
   .addiction-h_profile#profile
     %h1 プロフィール
-  = render 'profile_card'
+  = render partial: 'profile_card', local: { star: @star }
   .addiction-show__body#summary
     .summary-title
       %i.fa.fa-lg.fa-star-o{"aria-hidden" => "true"}
       %i.fa.fa-2x.fa-star{"aria-hidden" => "true"}
       %i.fa.fa-lg.fa-star-o{"aria-hidden" => "true"}
-      %h1 ハマっていることのタイトルは最長２０文字
+      %h1 #{@addiction.title}
     .addiction-card
       .addiciton-img
-        = image_tag("https://img.barks.jp/image/review/1000121850/h1.jpg")
+        = image_tag("#{@addiction.image}")
       .addiction-content
         .addiction-text
-          %p ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          %p #{@addiction.summary}
       #addicted-points.addiction-content
         .addiction-h
           %h2 楽しいところ
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.addicted_points}
       #difficult-points.addiction-content
         .addiction-h
           %h2 大変なところ
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.difficult_points}
       #trigger.addiction-content
         .addiction-h
           %h2 ハマったきっかけ
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.trigger}
       #future-aim.addiction-content
         .addiction-h
           %h2 将来の目標
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.future_aim}
       #trying-things.addiction-content
         .addiction-h
           %h2 日々取り組んでいること
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.trying_things}
       #message.addiction-content
         .addiction-h
           %h2 メッセージ
         .addiction-text
-          %p 台本を読ませていただいたのが2017年の夏ごろで、そこから作り始めたんですが、先に挿入歌の「ここにいないあなたへ」ができたんです。劇中で流れるということもあって、今回の『のび太の宝島』にしっかり寄り添った曲になりました。なので主題歌に関しては、映画シリーズの“大長編ドラえもん”全作に共通することを歌いたいと思ったんです。『のび太の宝島』からさらに飛躍して、もう少し大きな曲を作りたかった。そこから“何者でもなくても 世界を救おう”という歌詞ができました。
+          %p #{@addiction.message}
   .favorite-text.col-xs-9
     %p 一番上の お気に入り からいつでも見られるよ！
   .favorite.col-xs-3
-    = link_to "#",data: {id: ''},class: 'favorite-btn', id: "like-button" do
-      .favorite-btn__star
-        %p ★
+    - if user_signed_in?
+      = render partial: 'likes/like', locals: {addiction: @addiction}
+    - else
+      = link_to like_path(@addiction.id), method: :post do
+        .favorite-btn{:id => "like-button-#{@addiction.id}"}
+          .favorite-btn__star
+            %p ★
+

@@ -1,0 +1,26 @@
+#like__detail-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background-color: $common_page_box_background;
+}
+.galleryHeader{
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+    &__title{
+      font-size: 50px;
+      line-height: 140%;
+    }
+}
+.c-tabNav{
+  margin-bottom: 20px;
+  overflow: hidden;
+    &__list{
+      border-bottom: $default-border;
+    }
+    &__item{
+      margin-bottom: -1px;
+      text-align: center;
+    }
+}

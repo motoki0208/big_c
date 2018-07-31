@@ -1,0 +1,12 @@
+%tr#search_condition_item_row_lodger.sortable_row
+  %th
+    =translate_to_japanese(junction_table)
+    %p.note 複数可
+  %td
+    %span.td_scroll
+      %ul.form_list
+        -other_table.classify.constantize.all.each do |ele|
+          %li.form_item
+            =check_box_tag "q[#{junction_table.pluralize}_#{other_table}_id_in][]", ele.id, false
+            %label.for_items
+              =ele.name

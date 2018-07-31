@@ -1,0 +1,118 @@
+.contents{
+  .jumbotron{
+    background-image: image-url("jumbotron.jpg");
+    background-size: cover;
+    color: $white;
+    margin-bottom: -32px;
+    h1{
+      color: $white;
+      font-family: "Qarmic";
+    }
+  }
+  .navbar-nav{
+    .disabled:hover{
+      opacity: 1;
+    }
+    a{
+      cursor: pointer;
+    }
+  }
+}
+
+.introduction{
+  background-color: $common_page_box_background;
+  padding: 50px 0;
+  &__box{
+    min-height: 100px;
+    height: 10vw;
+    width: 80%;
+    max-width: 1150px;
+    margin: 0px auto;
+    background-color: $cream;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    h1{
+      line-height: 10vw;
+    }
+  }
+}
+
+.addictions{
+  background-color: $common_page_box_background;
+  width: 100vw;
+  padding-bottom: 100px;
+  &__feature,&__job,&__hobby,&__browsed{
+    padding-top: 30px;
+    width: 85vw;
+    margin: 0 auto;
+    max-width: 1150px;
+  }
+  .title{
+    margin-top: 50px;
+    padding: 10px 0;
+    max-width: 250px;
+    h2 {
+      position: relative;
+      font-size: calc(18px + 0.7vw);
+    }
+  }
+}
+.detail_header {
+  font-size: 80px;
+  vertical-align: middle;
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    right: 10px;
+    width: 100%;
+    border-bottom: solid 3px #FEA12F;
+  }
+}
+.description_background {
+  background-color:$common_page_box_background;
+  overflow: hidden;
+  .introduction{
+    max-width: 1200px;
+  }
+  .subtitle{
+    margin-top: 3.5vw;
+    text-align: center;
+    h2{
+    font-size: calc(14px + 1vw);
+    }
+  }
+  .description{
+    margin:2em auto;
+    position: relative;
+    padding: calc(12px + 0.1vw) calc(3px + 0.3vw);
+    border: solid 2px #ffcb8a;
+    border-radius: 3px 0 3px 0;
+    max-width: 500px;
+  &:before,&:after
+  {
+    content: '';
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border: solid 2px #ffcb8a;
+    border-radius: 50%;
+  }
+  &:after {
+      top:-12px;
+      left:-12px;
+  }
+  &:before {
+      bottom:-12px;
+      right:-12px;
+  }
+  &__text{
+    text-align: center;
+    p {
+        font-size: calc(12px + 0.2vw);
+        padding: 2px 0;
+    }
+  }
+}
+}

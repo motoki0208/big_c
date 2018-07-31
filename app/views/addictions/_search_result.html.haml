@@ -1,0 +1,20 @@
+.album.py-5.bg-light
+  .container
+    .row
+      - @stars.each do |star|
+        -if star.addiction
+          .col-lg-4.col-sm-6
+            .addiction-card.card.mx-1.my-1
+              = link_to(addiction_path(star.addiction), class: 'profile__card') do
+                .card-main-image.box-shadow
+                  = image_tag(star.addiction.image)
+                .card-body.p-3
+                  .card-left.col-md-3.p-0
+                    .rounded-circle.image-icon
+                      = image_tag(star.avatar,class: "")
+                  .card-right.col-md-9.p-0
+                    .card-text.pl-2
+                      %h4.addiction_title{style:"-webkit-box-orient: vertical;"}
+                        = star.addiction.title
+                      %p{style:"-webkit-box-orient: vertical;"}
+                        = star.addiction.summary
