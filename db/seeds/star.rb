@@ -15,7 +15,6 @@ Star.create(
     preference_for_school: 1,
     truancy_experience:    "false"
   )
-
 Star.create(
    avatar:                "administrator-male.png",
    name:                  "kobayashi sachio",
@@ -27,8 +26,8 @@ Star.create(
    family_env:            0,
    economic_situation:    1,
    hometown_id:           29,
-   occupation_id:         432,
-   school_club_id:        25,
+   occupation_id:         431,
+   school_club_id:        24,
    preference_for_school: 1,
    truancy_experience:    "true"
    )
@@ -45,6 +44,22 @@ Star.create(
     hometown_id:           28,
     occupation_id:         227,
     school_club_id:        8,
+    preference_for_school: 1,
+    truancy_experience:    "false"
+)
+Star.create(
+    avatar:                "student-male.png",
+    name:                  "辻 修平",
+    url_name:              "辻 修平のホームページ",
+    url:                   "https://socialfighter.jp/",
+    birthday:              "1994-02-08",
+    gender:                0,
+    sibling_position:      0,
+    family_env:            0,
+    economic_situation:    1,
+    hometown_id:           28,
+    occupation_id:         215,
+    school_club_id:        9,
     preference_for_school: 1,
     truancy_experience:    "false"
 )
@@ -75,7 +90,7 @@ occupation_c     = Occupation.count
 club_c           = SchoolClub.count
 
 # 男性*日本
-20.times do |i|
+100.times do |i|
   star_name = Gimei.male
   Star.create(
     avatar:                avatar_urls_m[rand(0..avatar_url_m_c)],
@@ -96,7 +111,7 @@ club_c           = SchoolClub.count
 end
 
 # 男性*海外
-10.times do |i|
+50.times do |i|
   star_name = Gimei.male
   Star.create(
     avatar:                avatar_urls_m[rand(0..avatar_url_m_c)],
@@ -117,7 +132,7 @@ end
 end
 
 # 女性*日本
-20.times do |i|
+100.times do |i|
   star_name = Gimei.female
   Star.create(
     avatar:                avatar_urls_f[rand(0..avatar_url_f_c)],
@@ -138,7 +153,7 @@ end
 end
 
 # 女性*海外
-10.times do |i|
+50.times do |i|
   star_name = Gimei.female
   Star.create(
     avatar:                avatar_urls_f[rand(0..avatar_url_f_c)],
@@ -159,7 +174,7 @@ end
 end
 
 # その他*日本
-20.times do |i|
+80.times do |i|
   star_name = Gimei.name
   Star.create(
     avatar:                avatar_urls_m[rand(0..avatar_url_m_c)],
@@ -180,7 +195,7 @@ end
 end
 
 # その他*海外
-10.times do |i|
+30.times do |i|
   star_name = Gimei.name
   Star.create(
     avatar:                avatar_urls_f[rand(0..avatar_url_f_c)],
