@@ -4,7 +4,7 @@ Star.create(
     name:                  "白柳明香里",
     url_name:              "白柳のホームページ",
     url:                   "https://socialfighter.jp/",
-    birthday:              Faker::Date.birthday(20, 60),
+    birthday:              "1994-05-25",
     gender:                1,
     sibling_position:      1,
     family_env:            0,
